@@ -1,0 +1,54 @@
+---
+permalink: concept-create-and-manage-backup-jobs-in-snapmanager-for-hyper-v.html 
+sidebar: sidebar 
+keywords: create, monitor, on-demand, backup, manage, schedule, snapmanager, hyper-v, creating, managing, application, crash 
+summary: Es posible crear y supervisar backups bajo demanda o gestionar backups programados en SnapManager para Hyper-V. 
+---
+= Cree y gestione tareas de backup en SnapManager para Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible crear y supervisar backups bajo demanda o gestionar backups programados en SnapManager para Hyper-V. También puede realizar dos tipos de tareas de backup con SnapManager para Hyper-V: Coherente con la aplicación y coherencia con los fallos.
+
+
+
+== Acerca de los backups de SnapManager para Hyper-V.
+
+Es posible crear trabajos de backup bajo demanda y ejecutarlas cuando se desee o se puedan crear trabajos de backup programados con políticas vinculadas a conjuntos de datos. Una tarea de backup bajo demanda puede incluir políticas de retención y replicación, así como secuencias de comandos para ejecutarse antes y después del backup. Es posible crear, modificar, ver y eliminar las políticas que componen trabajos de backup programados.
+
+
+
+== Los tipos de tareas de backup que SnapManager para Hyper-V pueden ejecutar
+
+Con SnapManager para Hyper-V, puede realizar dos tipos de tareas de backup: Coherente con la aplicación y coherencia con los fallos.
+
+
+
+== Trabajos de backup coherentes con las aplicaciones
+
+Las tareas de backup coherentes con las aplicaciones son exhaustivas, fiables y hacen un uso intensivo de los recursos. Se realizan en coordinación con el servicio de copia de volúmenes redundantes (VSS) de Microsoft para garantizar que cada aplicación que se ejecute en el equipo virtual se detiene antes de crear una copia snapshot. Este método de backup garantiza la coherencia de los datos de las aplicaciones. Puede utilizarla para restaurar máquinas virtuales y las aplicaciones que se ejecutan en ellas. Sin embargo, las tareas de backup coherentes con las aplicaciones requieren mucho tiempo y pueden ser complejas.
+
+
+
+== Trabajos de backup coherentes con los fallos
+
+Las tareas de backup coherentes con los fallos son copias snapshot rápidas de todas las LUN utilizadas por máquinas virtuales involucradas en un conjunto de datos. Las copias de backup resultantes son similares a las capturas de datos de las máquinas virtuales que se producen tras un bloqueo o se apagan de forma brusca. Las tareas de backup coherentes con los fallos proporcionan un método rápido de capturar datos, pero las máquinas virtuales deben estar presentes para restaurarlas a partir de un backup coherente con los fallos. Los trabajos de backup coherentes con los fallos no pretenden sustituir trabajos de backup coherentes con las aplicaciones.
+
+
+
+== Limitaciones y requisitos de SnapManager para backups de Hyper-V.
+
+Debe tener en cuenta los requisitos y las limitaciones de un SnapManager para backup de Hyper-V:
+
+* Las operaciones de backup y restauración no son compatibles si usted realiza una operación de conmutación de sitios o conmutación de estado en una configuración de MetroCluster. Si una operación de backup y restauración y una operación de conmutación de sitios o conmutación de estado están en ejecución simultáneamente, el `.vhd` El formato de archivo de una máquina virtual puede cambiar a. `.avhdx` En sistemas Windows Server 2012 R2. Este cambio no afecta al equipo virtual.
+* La `distributed application-consistent backup` Esta opción permite que varias máquinas virtuales que se ejecutan en los nodos del clúster de partners sean coherentes en una única copia Snapshot de hardware creada desde el nodo de backup. Esta opción es compatible para todas las máquinas virtuales que se ejecutan en un volumen de CSV 2.0 Windows en varios nodos de un clúster de conmutación por error de Windows.
+* Cuando se trabaja en 7-Mode, las tareas de backup coherentes con las aplicaciones utilizan VSS hardware Provider para realizar dos copias Snapshot. Las copias Snapshot se denominan `snapshot_name` y.. `snapshot_name_backup`. Las dos copias Snapshot se realizan para facilitar la recuperación automática durante el backup VSS.
+* En entornos en clúster, los backups coherentes con las aplicaciones requieren solo una copia Snapshot para el proceso de recuperación automática. Los clones SIS se aprovechan para realizar la recuperación automática y, una vez que se completa la recuperación automática, la primera copia de Snapshot (`snapshot_name`) se borra.
+* Cada volumen de Windows de la máquina virtual debe tener al menos 300 MB de espacio en disco libre. Esto incluye los volúmenes de Windows correspondientes a discos duros virtuales, LUN iSCSI y discos en modo de paso conectados al equipo virtual.
+* Un trabajo de backup coherente con los fallos siempre crea una sola copia Snapshot. No proporciona integración con VSS.
+* Se pueden ejecutar varias tareas de backup coherentes con los fallos en paralelo. Una tarea de backup coherente con los fallos se puede ejecutar en paralelo con una tarea de backup coherente con las aplicaciones.
+* `Allow Saved State Backup` no es aplicable a trabajos de backup coherentes con los fallos.
+

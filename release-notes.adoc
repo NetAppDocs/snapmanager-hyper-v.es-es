@@ -1,0 +1,16 @@
+---
+permalink: release-notes.html 
+sidebar: sidebar 
+keywords: release notes, snapmanager for hyper-v 
+summary: Las notas de la versión de SnapManager para Hyper-V describen funciones nuevas, notas de actualización, problemas solucionados, limitaciones conocidas y problemas conocidos. 
+---
+= Notas de la versión
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Las notas de la versión de SnapManager para Hyper-V describen funciones nuevas, notas de actualización, problemas solucionados, limitaciones conocidas y problemas conocidos.
+
+Para obtener más información, consulte https://library.netapp.com/ecm/ecm_download_file/ECMLP2851116["Notas de la versión de SnapManager para Hyper-V 2.1.4"^].

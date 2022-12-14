@@ -1,0 +1,26 @@
+---
+permalink: reference-high-memory-consumption-caused-by-antivirus-solution.html 
+sidebar: sidebar 
+keywords: high, memeory, consumption, cause, antivirus, solution 
+summary: Alto consumo de memoria causado por la solución antivirus. 
+---
+= Alto consumo de memoria causado por la solución antivirus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+* *Edición*
++
+Las soluciones antivirus a nivel de archivo pueden provocar un consumo elevado de memoria, lo que puede parecer una pérdida de memoria.
+
+* *Causa*
++
+En determinadas condiciones, SnapManager para Hyper-V podría consumir grandes cantidades de memoria en aumento constante debido a una solución antivirus configurada incorrectamente que analiza los archivos de configuración de los equipos virtuales. Cuando una solución antivirus analiza los archivos de configuración de VM, aparece un evento _InstanceModificationEvent, que describe los cambios. Cuando SnapManager para Hyper-V recibe esta notificación, activa una enumeración de máquinas virtuales y almacenamiento con SnapDrive para Windows. En algunos casos, estos eventos pueden ocurrir con tanta rapidez que SnapDrive para Windows no puede procesarlos, lo que provoca que SnapManager para Hyper-V los ponga en cola.
+
+* *Acción Correctiva*
++
+Excluya los archivos de equipo virtual de SnapManager para Hyper-V que no sean analizados por la solución antivirus.
+
+

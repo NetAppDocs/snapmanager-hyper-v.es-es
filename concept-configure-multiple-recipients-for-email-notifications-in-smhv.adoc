@@ -1,0 +1,16 @@
+---
+permalink: concept-configure-multiple-recipients-for-email-notifications-in-smhv.html 
+sidebar: sidebar 
+keywords: multiple, email, recipient, notification, comma, configuring, configure 
+summary: Los destinatarios de correo electrónico múltiples para las notificaciones deben estar separados por comas. 
+---
+= Configure las notificaciones por correo electrónico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Los destinatarios de correo electrónico múltiples para las notificaciones deben estar separados por comas.
+
+Cuando configure varios destinatarios de correo electrónico para las notificaciones por correo electrónico en SnapManager para Hyper-V, separe cada uno de ellos con una coma. Este requisito difiere de SnapManager para SQL en el que cada destinatario de notificación de correo electrónico debe estar separado por punto y coma.

@@ -1,0 +1,37 @@
+---
+permalink: concept-report-management.html 
+sidebar: sidebar 
+keywords: view, delete, backup, restore, configuration, report, snapmanager, hyper-v, information, virtual, machine, vm, managing, manage 
+summary: Es posible ver y eliminar informes de backup, restauración y configuración en SnapManager para Hyper-V. Estos informes contienen información importante sobre los conjuntos de datos, las máquinas virtuales y los hosts. También es posible exportar informes en distintos formatos. 
+---
+= Gestionar informes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible ver y eliminar informes de backup, restauración y configuración en SnapManager para Hyper-V. Estos informes contienen información importante sobre los conjuntos de datos, las máquinas virtuales y los hosts. También es posible exportar informes en distintos formatos.
+
+* *Informes de copia de seguridad*
++
+Los informes de backup muestran toda la información de backup de todos los hosts que pertenecen a un conjunto de datos en particular. Es posible ver un informe de backup de un conjunto de datos o una máquina virtual. Los informes que se muestran para una máquina virtual utilizan el nombre de la máquina virtual en lugar de su GUID.
+
++
+Cuando se muestre el informe de copia de seguridad, puede exportarlo en varios formatos distintos.
+
+* *Restaurar informes*
++
+Los informes de restauraciones muestran toda la información sobre la operación de restauración por máquina virtual.
+
++
+Cuando se muestra el informe de restauración, puede exportarlo en varios formatos distintos.
+
+* *Informes de configuración*
++
+Los informes de configuración muestran los ajustes de notificación, la ruta de informes y la ruta de SnapInfo para el host seleccionado.
+
++
+Cuando se muestra el informe de configuración, puede exportarlo a varios formatos diferentes.
+
+

@@ -1,0 +1,14 @@
+---
+permalink: task-migrate-a-hyper-v-virtual-machine-to-support-snapmanager-for-hyper-v-operations.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, contain, migration, wizard, migrate, virtual, machine, vm, non-ontap, ontap, service, manager, operation, migrating 
+summary: 'SnapManager para Hyper-V no incluye un asistente de migración para ayudarle a migrar máquinas virtuales (VM) de almacenamiento que no sea ONTAP a almacenamiento de ONTAP, de modo que pueda usarlos con SnapManager para Hyper-V. En su lugar, debe exportar e importar manualmente la máquina virtual mediante Server Manager.' 
+---
+= Migre una máquina virtual de Hyper-V para operaciones de SnapManager para Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapManager para Hyper-V no incluye un asistente de migración para ayudarle a migrar máquinas virtuales (VM) de almacenamiento que no sea ONTAP a almacenamiento de ONTAP, de modo que pueda usarlos con SnapManager para Hyper-V. En su lugar, debe exportar e importar manualmente la máquina virtual mediante Server Manager.

@@ -1,0 +1,34 @@
+---
+permalink: reference-vss-requestor-backup-components-failed-failed-to-call-keep-snapshot-set.html 
+sidebar: sidebar 
+keywords: vss, requestor, backup, component, fail, call, snapshot, set 
+summary: 'Solicitante VSS: Error en componentes de copia de seguridad. Error al llamar a mantener conjunto de instantáneas.' 
+---
+= Solicitante VSS: Error en componentes de copia de seguridad. Error al llamar a mantener conjunto de instantáneas.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Error*
++
+`Vss Requestor - Backup Components failed. Failed to call keep snapshot set. Reason Index and count must refer to a location within the string.`
+
+* *Descripción*
++
+Este error se produce cuando las máquinas virtuales de un trabajo de backup residen en una máquina virtual de almacenamiento y un servidor CIFS con el mismo nombre.
+
+* *Acción Correctiva*
++
+Ninguna disponible para esta versión.
+
+* *Ejemplo de fallo*
++
+.. Cree un equipo virtual de almacenamiento y un servidor CIFS con el mismo nombre: Por ejemplo, «'test1'».
+.. Agregue el nombre test1 al DNS con ambas direcciones IP.
+.. En un host de Windows Server 2012, instale SnapManager para Hyper-V y cree algunos equipos virtuales usando los recursos compartidos de CIFS de test1.
+.. Cree una copia de backup que incluya esas máquinas virtuales.
+.. Tenga en cuenta que el trabajo de backup falla y genera el error: `Backup Components failed. Failed to call keep snapshot set. Reason Index and count must refer to a location within the string.`
+
+
+

@@ -1,0 +1,73 @@
+---
+permalink: reference-dataset-backup-might-fail-with-a-partial-writer-error.html 
+sidebar: sidebar 
+keywords: vss, requestor, backup, component, partial, writer, error 
+summary: 'Solicitante VSS: Error de componentes de copia de seguridad con escritor parcial.' 
+---
+= Solicitante VSS: Error de componentes de copia de seguridad con escritor parcial
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Mensaje*
++
+[listing]
+----
+Error: Vss Requestor - Backup Components failed with partial
+writer error.
+Writer Microsoft Hyper-V VSS Writer involved in backup or restore
+operation reported partial failure. Writer returned failure code
+0x80042336. Writer state is 5.
+Application specific error information:
+Application error code: 0x1
+Application error message: -
+Failed component information:
+Failed component: VM GUID XXX
+    Writer error code: 0x800423f3
+    Application error code: 0x8004230f
+    Application error message: Failed to revert to VSS snapshot on the
+    virtual hard disk 'volume_guid' of the virtual machine 'vm_name'.
+   (Virtual machine ID XXX)
+----
++
+Los siguientes errores aparecen en el registro de eventos de la aplicación de Windows en el host de Hyper-V:
+
++
+[listing]
+----
+Volume Shadow Copy Service error: Unexpected error calling routine
+GetOverlappedResult.  hr = 0x80070057, The parameter is incorrect.
+
+Operation:
+   Revert a Shadow Copy
+
+Context:
+   Execution Context: System Provider
+
+Volume Shadow Copy Service error: Error calling a routine on a Shadow
+Copy Provider
+{b5946137-7b9f-4925-af80-51abd60b20d5}. Routine details
+RevertToSnapshot
+[hr = 0x80042302, A Volume Shadow Copy Service component encountered
+an unexpected
+error.
+Check the Application event log for more information.].
+
+Operation:
+   Revert a Shadow Copy
+
+Context:
+   Execution Context: Coordinator
+----
+* *Descripción*
++
+Este mensaje aparece al realizar un backup de un conjunto de datos coherente con la aplicación. Este error provoca un error en el backup de algunas de las máquinas virtuales del conjunto de datos.
+
+* *Acción Correctiva*
++
+** Volver a intentar el backup del conjunto de datos.
+** Si vuelve a fallar el intento de reintento, divida el conjunto de datos en dos conjuntos de datos de forma que todas las máquinas virtuales cuyo backup no se haya realizado correctamente se coloquen en un único conjunto de datos y el resto de máquinas virtuales se colocarán en otro conjunto de datos. A continuación, vuelva a ejecutar el backup.
+
+
+

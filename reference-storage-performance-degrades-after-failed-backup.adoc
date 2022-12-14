@@ -1,0 +1,25 @@
+---
+permalink: reference-storage-performance-degrades-after-failed-backup.html 
+sidebar: sidebar 
+keywords: storage, performance, degrade, fail, backup 
+summary: El rendimiento del almacenamiento se degrada después de los fallos del backup. 
+---
+= El rendimiento del almacenamiento se degrada después de los fallos del backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Edición*
++
+El rendimiento del almacenamiento puede verse afectado tras la realización de tareas de backup fallidas.
+
+* *Causa*
++
+Si los componentes de VSS de Hyper-V de Microsoft experimentan una excepción durante un backup, los volúmenes compartidos en cluster (CSV) pueden permanecer en modo I/o redirigido, lo que provoca sobrecarga de I/o y cuellos de botella potenciales en el clúster de conmutación por error de Windows. Esto puede provocar una degradación del rendimiento general, con el mayor impacto sobre los equipos virtuales que residen en volúmenes compartidos en clúster en modo de I/o redirigido.
+
+* *Acción Correctiva*
++
+Póngase en contacto con el soporte técnico de Microsoft para obtener ayuda con este problema.
+
+

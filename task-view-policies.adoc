@@ -1,0 +1,24 @@
+---
+permalink: task-view-policies.html 
+sidebar: sidebar 
+keywords: view, policy, detail, associate, specific, dataset, policies 
+summary: Puede ver los detalles de las políticas asociados con un conjunto de datos específico. 
+---
+= Ver políticas
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede ver los detalles de las políticas asociados con un conjunto de datos específico.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[Datasets].
+. Seleccione el conjunto de datos que contiene las políticas que desea ver.
+. En el panel Policies, seleccione la política específica para la que desea ver detalles.
++
+Se muestra información sobre la política en el panel Detalles.
+
+

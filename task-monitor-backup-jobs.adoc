@@ -1,0 +1,28 @@
+---
+permalink: task-monitor-backup-jobs.html 
+sidebar: sidebar 
+keywords: view, schedule, job, particular, dataset, management, window, schedule, tab, backup, monitor, backup 
+summary: Para ver los trabajos de backup programados para un conjunto de datos concreto, utilice la pestaña Scheduled de la ventana Jobs Management. También es posible ver los trabajos de backup y restauración en ejecución en ese momento mediante la pestaña de la ventana Jobs Management que se ejecuta. 
+---
+= Supervisar las tareas de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible ver los trabajos de backup programados para un conjunto de datos concreto mediante la pestaña ventana Jobs Management Scheduled. También puede ver los trabajos de backup y restauración que se están ejecutando en ese momento mediante la pestaña Jobs Management windowRunning.
+
+.Pasos
+. En el panel de navegación, haga clic en *trabajos*.
+. Haga clic en la ficha *programado* o en la ficha *ejecutando*.
+. Seleccione el trabajo de backup programado o en ejecución, o el de restauración que desea supervisar.
++
+Se muestra información sobre el trabajo en el panel Detalles.
+
+. Utilice el informe de trabajo en ejecución en *vista Informes*, si desea ver un informe activo de un trabajo en ejecución.
++
+
+NOTE: También es posible supervisar las tareas de backup con la consola SCOM de Microsoft. Consulte el sitio Web de Microsoft para obtener más información.
+
+

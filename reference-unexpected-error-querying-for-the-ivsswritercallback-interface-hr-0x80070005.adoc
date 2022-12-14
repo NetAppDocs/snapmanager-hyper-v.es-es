@@ -1,0 +1,25 @@
+---
+permalink: reference-unexpected-error-querying-for-the-ivsswritercallback-interface-hr-0x80070005.html 
+sidebar: sidebar 
+keywords: unexpect, error, query, ivsswritercallback, interface, hr, 0x80070005, access, denied, deny 
+summary: Error inesperado al consultar la interfaz IVssWriterCallback. hr = 0x80070005, acceso denegado. 
+---
+= Error inesperado al consultar la interfaz IVssWriterCallback. hr = 0x80070005, acceso denegado.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Mensaje*
++
+`Unexpected error querying for the IVssWriterCallback interface. hr = 0x80070005, Access is denied.`
+
+* *Descripción*
++
+Si un volumen compartido en clúster es propiedad del propietario del grupo de clústeres y la máquina virtual es propiedad del nodo asociado, el backup de la máquina virtual se completa correctamente con el error VSS en el registro de eventos de la aplicación. A menudo, esto se debe a una configuración de seguridad incorrecta en el proceso de escritor o solicitante.
+
+* *Acción Correctiva*
++
+Ninguno: Este mensaje de error puede ignorarse.
+
+

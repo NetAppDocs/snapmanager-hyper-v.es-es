@@ -1,0 +1,25 @@
+---
+permalink: reference-required-hotfix-kb2263829-cannot-be-installed-on-some-platforms.html 
+sidebar: sidebar 
+keywords: require, hotfix, kb2263829, install, platform 
+summary: La revisión KB2263829 requerida no se puede instalar en algunas plataformas. 
+---
+= La revisión KB2263829 requerida no se puede instalar en algunas plataformas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Edición*
++
+Al instalar SnapManager para Hyper-V, intentar instalar la revisión KB2263829 podría fallar en Windows Server 2008 R2 SP1. El instalador indica que la revisión no es aplicable a este servidor.
+
+* *Causa*
++
+La revisión no es compatible con su plataforma.
+
+* *Acción Correctiva*
++
+Abra un caso de soporte con Microsoft y resuelva el problema con Microsoft.
+
+

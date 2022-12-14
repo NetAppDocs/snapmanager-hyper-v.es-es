@@ -1,0 +1,22 @@
+---
+permalink: task-delete-a-report.html 
+sidebar: sidebar 
+keywords: delete, report, deleting 
+summary: Puede eliminar uno o varios informes cuando ya no sean necesarios. 
+---
+= Eliminar un informe
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede eliminar uno o varios informes cuando ya no sean necesarios.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Reports[Datasets] o MENU:Reports[hosts].
+. Seleccione el conjunto de datos, la máquina virtual o el host que contiene el informe o los informes que desea eliminar.
+. En el panel Informes, seleccione el informe o los informes que desee eliminar.
+. En el panel acciones, haga clic en *Eliminar informe* y haga clic en *Aceptar* para eliminar.
+

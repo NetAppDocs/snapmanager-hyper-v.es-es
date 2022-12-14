@@ -1,0 +1,56 @@
+---
+permalink: reference-list-of-requirements-for-installing-snapmanager-for-hyper-v.html 
+sidebar: sidebar 
+keywords: environment, hardware, software, ontap, license, licensing, requirement, install, snapmanager, hyper-v, windows, .net, 4.5 
+summary: Su entorno debe cumplir con todos los requisitos de hardware, software, ONTAP y licencia antes de poder instalar SnapManager para Hyper-V. 
+---
+= Lista de requisitos para instalar SnapManager para Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Su entorno debe cumplir con todos los requisitos de hardware, software, ONTAP y licencia antes de poder instalar SnapManager para Hyper-V. El instalador se detiene si no se cumplen los requisitos para el sistema operativo mínimo de Windows y .Net 4.5.
+
+
+
+== Requisitos del host principal de Hyper-V.
+
+Debe tener los hosts principales de Hyper-V que ejecuten Windows Server 2008 R2 o superior. Debe tener activados los roles de Hyper-V en los hosts principales. Debe tener instalado SnapDrive 7.1 para Windows o posterior en el host primario de Hyper-V.
+
+
+
+== Descarga de SnapManager para Hyper-V.
+
+Debe haber descargado el software de SnapManager para Hyper-V del sitio de soporte de NetApp.
+
+
+
+== Requisitos del sistema de almacenamiento
+
+El sistema de almacenamiento debe ejecutar la versión adecuada del software ONTAP. Puede utilizar las licencias basadas en host o del sistema de almacenamiento para instalar SnapManager para Hyper-V.
+
+
+
+== Licencias
+
+Es necesario tener las licencias adecuadas para ejecutar SnapManager para Hyper-V.
+
+
+
+== Credenciales
+
+Debe tener las credenciales adecuadas para instalar y ejecutar SnapManager para Hyper-V.
+
+
+
+== Cuenta de servicio y requisitos de autenticación
+
+Debe tener una cuenta de servicio y cumplir con los requisitos de autenticación. Debe poder iniciar sesión en el host mediante la cuenta de servicio y esa cuenta debe tener derechos administrativos.
+
+
+
+== Número de puerto del servicio Web
+
+Debe tener disponible el número de puerto Net.TCP del servicio Web. El número de puerto predeterminado es 808. Cuando se instala SnapManager para Hyper-V en un clúster, debe asegurarse de que se utiliza el mismo número de puerto en todos los nodos.

@@ -1,0 +1,46 @@
+---
+permalink: concept-overview-of-vss-components.html 
+sidebar: sidebar 
+keywords: microsoft, windows, server, volume, shadow, copy, service, vss, coordinate, data, backup, application, storage, management, consisten, backup 
+summary: 'Puede utilizar el servicio de copia de volúmenes redundantes (VSS) de Microsoft Windows Server Coordinate data Server, las aplicaciones de backup y el software de gestión de almacenamiento para hacer posible la creación y administración de backups coherentes.' 
+---
+= Componentes de VSS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede utilizar el servicio de copia de volúmenes redundantes (VSS) de Microsoft Windows Server Coordinate data Server, las aplicaciones de backup y el software de gestión de almacenamiento para hacer posible la creación y administración de backups coherentes.
+
+VSS coordina las operaciones de backup y restauración basadas en copias Snapshot e incluye los siguientes componentes:
+
+* *Solicitante VSS*
++
+El solicitante VSS es una aplicación de backup, como SnapManager para Hyper-V o NTBackup. Inicia las operaciones de backup y restauración de VSS. El solicitante también especifica los atributos de copia de Snapshot para los backups que inicia.
+
+* *Escritor de VSS*
++
+El escritor VSS posee y gestiona los datos que se van a capturar en la copia Snapshot. Microsoft Hyper-V VSS Writer es un ejemplo de un escritor VSS.
+
+* *Proveedor de VSS*
++
+El proveedor de VSS es responsable de crear y gestionar la copia snapshot. Un proveedor puede ser un proveedor de hardware o un proveedor de software:
+
++
+** Un proveedor de hardware integra la funcionalidad de copia de Snapshot y clonado específica de la cabina de almacenamiento en el marco de VSS.
++
+El proveedor de hardware VSS de ONTAP integra los sistemas de almacenamiento y servicio SnapDrive que ejecutan Data ONTAP en el marco de trabajo VSS.
+
++
+
+NOTE: El proveedor de hardware VSS de ONTAP se instala automáticamente como parte de la instalación del software SnapDrive.
+
+** Un proveedor de software implementa la funcionalidad de copia Snapshot o clonado en el software que se ejecuta en el sistema Windows.
++
+
+NOTE: Para garantizar que el proveedor de hardware VSS de ONTAP funciona correctamente, no utilice el proveedor de software VSS en las LUN de Data ONTAP. Si utiliza el proveedor de software VSS para crear copias Snapshot en una LUN de Data ONTAP, no puede eliminar esa LUN con el proveedor de hardware VSS.
+
+
+
+

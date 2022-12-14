@@ -1,0 +1,23 @@
+---
+permalink: concept-how-snapmanager-for-hyper-v-uses-vss.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, integration, microsoft, hyper-v, volume, shadow, copy, service, vss, quiesce, virtual, machine, vm, snapshot 
+summary: 'SnapManager para Hyper-V ofrece integración con el escritor de Microsoft Hyper-V Volume Shadow Copy Service (VSS) para poner en modo inactivo una máquina virtual antes de crear una copia Snapshot coherente con la aplicación de la máquina virtual.' 
+---
+= Cómo utiliza SnapManager para Hyper-V VSS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SnapManager para Hyper-V ofrece integración con el escritor de Microsoft Hyper-V Volume Shadow Copy Service (VSS) para poner en modo inactivo una máquina virtual antes de crear una copia Snapshot coherente con la aplicación de la máquina virtual.
+
+SnapManager para Hyper-V es un solicitante VSS y coordina la operación de backup para crear una copia Snapshot coherente mediante el proveedor de hardware VSS para máquinas virtuales Data ONTAP para Hyper-V que se ejecutan en SAN y el proveedor VSS remoto para máquinas virtuales Hyper-V que se ejecutan en el recurso compartido SMB 3.0.
+
+SnapManager para Hyper-V permite realizar backups coherentes con las aplicaciones de un equipo virtual si dispone de Microsoft Exchange, Microsoft SQL o cualquier otra aplicación compatible con VSS que se ejecute en discos duros virtuales (VHD) del equipo virtual. SnapManager para Hyper-V se coordina con los escritores de aplicaciones dentro de la máquina virtual para garantizar que los datos de la aplicación son coherentes cuando el backup tiene lugar.
+
+También puede restaurar una máquina virtual a partir de un backup coherente con las aplicaciones. Las aplicaciones que existen en la máquina virtual restauran con el mismo estado que en el momento del backup. SnapManager para Hyper-V restaura el equipo virtual a su ubicación original.
+
+
+NOTE: La integración con VSS sólo está disponible con los backups coherentes con las aplicaciones. Los backups coherentes con los fallos no utilizan VSS.

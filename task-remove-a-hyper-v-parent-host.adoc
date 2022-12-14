@@ -1,0 +1,27 @@
+---
+permalink: task-remove-a-hyper-v-parent-host.html 
+sidebar: sidebar 
+keywords: remove, hyper-v, parent, host, cluster, snapmanager, removing 
+summary: Es posible quitar un host primario o un clúster de hosts primario de Hyper-V cuando ya no se desea administrar con SnapManager para Hyper-V. 
+---
+= Quite un host principal de Hyper-V o un clúster de host principal
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible quitar un host primario o un clúster de hosts primario de Hyper-V cuando ya no se desea administrar con SnapManager para Hyper-V.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[hosts].
+. Seleccione el host o el clúster de hosts que desea quitar.
+. En el panel *acciones*, haga clic en *Quitar*.
++
+Puede seleccionar *Eliminar todas las copias de seguridad de VM* para eliminar cualquier copia de seguridad de máquina virtual asociada con el host.
+
++
+El clúster de host o host principal de Hyper-V se elimina de SnapManager para la administración de Hyper-V, pero no se elimina de forma permanente. Los equipos virtuales que pertenecen a ese host o clúster de hosts también se eliminan de cualquier conjunto de datos al que pertenecen.
+
+

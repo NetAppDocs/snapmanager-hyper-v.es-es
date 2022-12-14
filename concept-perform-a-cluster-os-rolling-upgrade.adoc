@@ -1,0 +1,22 @@
+---
+permalink: concept-perform-a-cluster-os-rolling-upgrade.html 
+sidebar: sidebar 
+keywords: cluster, operating, system, os, rolling, upgrade, snapmanager, perform, reducing, reduce, downtime 
+summary: 'Puede realizar una actualización gradual de un sistema operativo (SO) de clúster para actualizar el sistema operativo de los nodos del clúster sin detener SnapManager para Hyper-V. Esta función admite el cumplimiento de los SLA al reducir el tiempo de inactividad.' 
+---
+= Realice una actualización gradual de sistema operativo de clúster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede realizar una actualización gradual de un sistema operativo (SO) de clúster para actualizar el sistema operativo de los nodos del clúster sin detener SnapManager para Hyper-V. Esta función admite el cumplimiento de los SLA al reducir el tiempo de inactividad.
+
+Los clústeres de conmutación al nodo de respaldo que ejecutan SnapManager para Hyper-V se pueden actualizar de Windows Server 2012 R2 a Windows Server 2016 y Windows Server 2019 sin tiempo de inactividad.
+
+Para obtener información sobre las ventajas de la actualización gradual de Cluster OS, el proceso de instalación y las limitaciones consulte la información relacionada.
+
+*Información relacionada*
+
+https://docs.microsoft.com/en-us/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade["Microsoft TechNet: Actualización gradual del sistema operativo de clúster"]

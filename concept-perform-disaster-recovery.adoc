@@ -1,0 +1,14 @@
+---
+permalink: concept-perform-disaster-recovery.html 
+sidebar: sidebar 
+keywords: disaster, recovery, feature, ensure, disaster, circumstance, critical, protect, data, primary, storage, powershell, perform 
+summary: La función de recuperación ante desastres garantiza que, si un desastre u otras circunstancias hacen que los datos protegidos cruciales en sus sitios de almacenamiento principal no estén disponibles, pueda proporcionar acceso a la copia de seguridad de esos datos a través de sus sitios de almacenamiento secundarios. La recuperación ante desastres solo se puede realizar mediante la interfaz de PowerShell. 
+---
+= Llevar a cabo la recuperación ante desastres
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+La función de recuperación ante desastres garantiza que, si un desastre u otras circunstancias hacen que los datos protegidos cruciales en sus sitios de almacenamiento principal no estén disponibles, pueda proporcionar acceso a la copia de seguridad de esos datos a través de sus sitios de almacenamiento secundarios. La recuperación ante desastres solo se puede realizar mediante la interfaz de PowerShell.

@@ -1,0 +1,25 @@
+---
+permalink: reference-secondary-machine-unable-to-delete-backups-after-failover.html 
+sidebar: sidebar 
+keywords: deleting, delete, backup, failover 
+summary: Eliminación de backups después de una conmutación por error. 
+---
+= Eliminar backups después de una conmutación al nodo de respaldo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Mensaje*
++
+`The specified backup does not exist for some of the objects in the dataset.`
+
+* *Descripción*
++
+Después de la conmutación por error a un sitio secundario (sitio B), es posible que no pueda eliminar los backups creados en el sitio principal (sitio A). Si se encuentra en un sitio de recuperación ante desastres (sitio B) e intenta eliminar los backups realizados en el sitio principal (sitio A), eliminará los backups del sitio principal (sitio A) en lugar del sitio de recuperación ante desastres (sitio B).
+
+* *Acción Correctiva*
++
+Después de realizar las operaciones de recuperación ante desastres, solo elimine los backups que se hayan realizado en el sitio de la operación actual.
+
+

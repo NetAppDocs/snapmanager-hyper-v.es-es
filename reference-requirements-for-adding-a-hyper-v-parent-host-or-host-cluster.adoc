@@ -1,0 +1,90 @@
+---
+permalink: reference-requirements-for-adding-a-hyper-v-parent-host-or-host-cluster.html 
+sidebar: sidebar 
+keywords: configuration, information, available, parent, host, cluster, snapmanager, hyper-v 
+summary: Debe tener disponible toda la información de configuración necesaria antes de añadir un host principal o un clúster de hosts a SnapManager para Hyper-V. 
+---
+= Requisitos para añadir un host principal o un clúster de hosts de Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Debe tener disponible toda la información de configuración necesaria antes de añadir un host principal o un clúster de hosts a SnapManager para Hyper-V.
+
+
+
+== Instalación de SnapManager para Hyper-V.
+
+Debe instalar SnapManager para Hyper-V en el host de Hyper-V que desee agregar.
+
+Si no tiene instalado SnapManager para Hyper-V, se le pedirá que ejecute el asistente de instalación remota de host. Se debe instalar la misma versión de SnapManager para Hyper-V en cada nodo del clúster.
+
+
+
+== Ajustes de configuración
+
+El host primario de Hyper-V que desea añadir tiene que estar configurado para SnapManager para Hyper-V.
+
+Si los ajustes de SnapInfo, del directorio de informes y de notificaciones no se han configurado para SnapManager para Hyper-V, puede realizar una configuración después de añadir el host con el asistente de configuración.
+
+Inicialmente, la pestaña *gestionar conexiones de almacenamiento* está vacía. Puede agregar las conexiones de almacenamiento desde la pestaña *gestionar conexiones de almacenamiento*, pero las conexiones recién agregadas son visibles desde SnapDrive para Windows (SDW) Transport Protocol Settings (TPS).
+
+Es necesario configurar el repositorio de backup y el directorio de informes para añadir y gestionar máquinas virtuales mediante SnapManager para Hyper-V. Los ajustes de notificación son opcionales.
+
+
+
+== Máquinas virtuales y LUN de ONTAP
+
+Todos los archivos asociados con los equipos virtuales, incluidos los archivos de configuración, la ubicación del archivo de copia de Snapshot y los discos duros virtuales, deben residir en las LUN de ONTAP.
+
+Esto es necesario para ejecutar un backup correcto.
+
+
+NOTE: Si cambia la ubicación de un archivo de Snapshot de máquina virtual a una LUN de ONTAP diferente después de crear la máquina virtual, debe crear al menos una copia de Snapshot de equipo virtual mediante Hyper-V Manager antes de realizar un backup mediante SnapManager para Hyper-V. Si cambia la ubicación del archivo de copia de Snapshot y no realiza una copia Snapshot de máquina virtual antes de realizar un backup, se podría producir un error en la operación de backup.
+
+
+
+== Máquinas virtuales dedicadas y en clúster
+
+Sus máquinas virtuales pueden ser dedicadas o formar parte de un clúster.
+
+Si añade un único host, SnapManager para Hyper-V gestiona las máquinas virtuales dedicadas en ese host. Si se añade un clúster de hosts, SnapManager para Hyper-V gestiona las máquinas virtuales compartidas en el clúster de hosts. Los equipos virtuales que residen en SAN y NAS que pertenecen al mismo clúster de host no deberían existir en el mismo conjunto de datos. La adición de estos tipos de recursos a un único conjunto de datos puede provocar un error en el backup del conjunto de datos.
+
+Para los backups coherentes con las aplicaciones, los backups de conjuntos de datos de máquinas virtuales en clúster tardan más en completarse cuando las máquinas virtuales se ejecutan en diferentes nodos del clúster. Cuando las máquinas virtuales se ejecutan en nodos diferentes, se necesitan operaciones de backup independientes para cada nodo del clúster. Si todas las máquinas virtuales se ejecutan en el mismo nodo, solo se necesita una operación de backup, lo que resulta en un backup más rápido.
+
+
+
+== Número de máquinas virtuales
+
+Si el host o el clúster de hosts de Hyper-V tiene más de 1,000 máquinas virtuales, debe aumentar el valor del máximo `Elements In Cache Before Scavenging` propiedad en la `SnapMgrServiceHost.exe.config` Archivo para Hyper-V Cache Manager. Este valor debe ser mayor o igual que el número de hosts de Hyper-V que se ejecutan en un host o clúster independientes. El valor debe cambiarse en cada nodo del clúster y el servicio SnapManager para Hyper-V debe reiniciarse tras cambiar este valor. Debe editar manualmente el `SnapMgrServiceHost.exe.config` archivo mediante un editor de texto.
+
+[listing]
+----
+<cacheManagers>
+…
+      <add name="HyperV Cache Manager"
+                        type="Microsoft.Practices.EnterpriseLibrary.Caching.CacheManager,
+                           Microsoft.Practices.EnterpriseLibrary.Caching"
+                        expirationPollFrequencyInSeconds="60"
+                        maximumElementsInCacheBeforeScavenging="1200"
+                        numberToRemoveWhenScavenging="10"
+                        backingStoreName="inMemory" />
+…
+</cacheManagers>
+----
+
+
+== Requisitos de la cuenta de servicio de SnapManager para Hyper-V.
+
+Cuando se utiliza SnapManager para Hyper-V para gestionar un clúster de hosts de Hyper-V, las cuentas de servicio de SnapManager para Hyper-V y SnapDrive para Windows deben ser cuentas de usuario de dominio con derechos de administrador local en el servidor.
+
+Se ejecutan backups coherentes con las aplicaciones de SnapManager para Hyper-V en el nodo del clúster donde se ejecuta la máquina virtual. Si los volúmenes compartidos de clúster (CSV) que usa el equipo virtual no son propiedad del mismo nodo, pueden producirse errores en los backups de los equipos virtuales cuando el servicio SnapManager para Hyper-V usa una cuenta de sistema local (aunque la cuenta tenga privilegios de administrador). En este caso, SnapManager para Hyper-V no puede detectar que los archivos de la máquina virtual residen en un volumen compartido en clúster, lo que provoca un error del backup.
+
+
+NOTE: Para que las operaciones del servicio de copia de volúmenes redundantes (VSS) remotos con equipos virtuales almacenados en recursos compartidos de disponibilidad continua (CA) de SMB 3.0 de Clustered Data ONTAP funcionen correctamente, Debe conceder derechos de control completos al recurso compartido para las cuentas de servicio SnapDrive para Windows y un acceso de nivel de lectura mínimo a la cuenta de servicio web de SnapManager para Hyper-V.
+
+*Información relacionada*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet: Hyper-V"]

@@ -1,0 +1,24 @@
+---
+permalink: task-view-a-host-report.html 
+sidebar: sidebar 
+keywords: view, report, host, manage, snapmanager, hyper-v 
+summary: Es posible ver un informe sobre un host gestionado en SnapManager para Hyper-V. 
+---
+= Ver un informe de host
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible ver un informe sobre un host gestionado en SnapManager para Hyper-V.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Reports[hosts].
+. Seleccione el host que contiene el informe que desea ver.
+. En el panel Informes, seleccione el informe que desea ver y haga clic en *Ver informe*.
++
+El informe de configuración aparece en una ventana independiente.
+
+

@@ -1,0 +1,25 @@
+---
+permalink: task-modify-a-dataset.html 
+sidebar: sidebar 
+keywords: create, dataset, modify, description, resource, associate 
+summary: Después de crear un conjunto de datos, puede modificar la descripción del conjunto de datos y los recursos asociados al mismo. 
+---
+= Modificar un conjunto de datos
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Después de crear un conjunto de datos, puede modificar la descripción del conjunto de datos y los recursos asociados al mismo.
+
+.Acerca de esta tarea
+La casilla de comprobación Validar conjunto de datos está activada de forma predeterminada. SnapManager para Hyper-V comprueba si hay errores de configuración en todas las máquinas virtuales durante la creación o modificación de un conjunto de datos. Debe asegurarse de que la casilla de verificación no esté seleccionada si no desea habilitar la validación del conjunto de datos.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[Datasets].
+. Seleccione el conjunto de datos que desea modificar.
+. En el panel acciones, haga clic en *Modificar conjunto de datos*.
+. Complete los pasos del asistente.
+

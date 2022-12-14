@@ -1,0 +1,42 @@
+---
+permalink: task-set-up-a-snapinfo-lun.html 
+sidebar: sidebar 
+keywords: add, snapinfo, lun, snapmanager, hyper-v, store, dataset, backup, metadata, reside, ontap, setting, up 
+summary: Tiene que añadir una LUN de SnapInfo en SnapManager para Hyper-V para almacenar los metadatos de backup del conjunto de datos. La ruta de SnapInfo debe residir en una LUN de ONTAP, porque SnapManager para Hyper-V realiza un backup de la copia de SnapInfo tras un backup regular. 
+---
+= Configure una LUN de SnapInfo
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Tiene que añadir una LUN de SnapInfo en SnapManager para Hyper-V para almacenar los metadatos de backup del conjunto de datos. La ruta de SnapInfo debe residir en una LUN de ONTAP, porque SnapManager para Hyper-V realiza un backup de la copia de SnapInfo tras un backup regular.
+
+.Lo que necesitará
+La ruta de SnapInfo puede residir en un volumen compartido de clúster (CSV) si se ejecuta un clúster de Windows Server 2012. Si se gestionan máquinas virtuales dedicadas, la ubicación de SnapInfo debe ser una LUN de ONTAP dedicada. Si se gestionan máquinas virtuales compartidas, la ubicación de SnapInfo debe ser una LUN de ONTAP compartida.
+
+.Pasos
+. Cree un disco compartido nuevo mediante SnapDrive para Windows.
++
+.. Cuando se le dé la opción de elegir un grupo de servicios de clúster de Microsoft, seleccione la opción *Crear un nuevo grupo de clústeres.*
+.. Asigne un nombre al grupo `smhv_snapinfo` y complete el proceso.
+
+
+. Abra Windows Failover Clustering (WFC) y verifique que el nuevo grupo esté en línea.
+. Instale SnapManager para Hyper-V en cada nodo del clúster.
+. Ejecute el asistente *Configuración* y aplique los ajustes de configuración de SnapInfo a todos los nodos del clúster.
++
+.. Seleccione uno de los hosts.
+.. En el panel *Navegación*, haga clic en menú:Protección[hosts].
+.. En el panel acciones, ejecute el asistente *Configuración*.
+.. Aplique los ajustes de SnapInfo a la LUN recién creada.
+
+
+
+
+.Resultados
+Cuando se ejecuta el asistente de configuración, los ajustes de configuración de SnapInfo se replican en todos los nodos del clúster. *Información relacionada*
+
+xref:reference-error-snapdrive-sddiscoveryfilesystemlistinfo-response-is-null.adoc[Error: La respuesta SDDiscoveryFileSystemListInfo de SnapDrive es nula]

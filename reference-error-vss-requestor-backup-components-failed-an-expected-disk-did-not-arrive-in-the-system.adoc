@@ -1,0 +1,58 @@
+---
+permalink: reference-error-vss-requestor-backup-components-failed-an-expected-disk-did-not-arrive-in-the-system.html 
+sidebar: sidebar 
+keywords: vss, requestor, backup, component, fail, disk, system 
+summary: 'Solicitante VSS: Error en componentes de copia de seguridad. Un disco esperado no llegó al sistema' 
+---
+= Solicitante VSS: Error en componentes de copia de seguridad. Un disco esperado no llegó al sistema
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Causa*
++
+Este mensaje ocurre cuando realiza el backup de un conjunto de datos mediante SnapManager para Hyper-V y aparece el siguiente error en el registro de eventos de aplicación de Windows en el host de Hyper-V.
+
++
+[listing]
+----
+A Shadow Copy LUN was not detected in the system and did not
+arrive.
+
+     LUN ID     guid
+
+     Version      0x0000000000000001
+     Device Type    0x0000000000000000
+     Device TypeModifier  0x0000000000000000
+     Command Queueing 0x0000000000000001
+     Bus Type   0x0000000000000006
+     Vendor Id    vendor
+     Product Id   LUN
+     Product Revision   number
+     Serial Number    serial_number
+
+     Storage Identifiers
+     Version    0
+     Identifier Count 0
+
+
+
+    Operation:
+       Exposing Disks
+       Locating shadow-copy LUNs
+       PostSnapshot Event
+       Executing Asynchronous Operation
+
+    Context:
+       Execution Context: Provider
+       Provider Name: Data ONTAP VSS Hardware Provider
+       Provider Version: 6. 1. 0. 4289
+       Provider ID: {ddd3d232-a96f-4ac5-8f7b-250fd91fd102}
+   Current State: DoSnapshotSet
+----
+* *Acción Correctiva*
++
+Volver a intentar el backup del conjunto de datos.
+
+

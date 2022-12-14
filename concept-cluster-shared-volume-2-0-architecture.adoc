@@ -1,0 +1,31 @@
+---
+permalink: concept-cluster-shared-volume-2-0-architecture.html 
+sidebar: sidebar 
+keywords: windows, server, cluster, shared, volume, csv, backup 
+summary: 'Windows Server 2012 y versiones posteriores proporcionan nuevas funciones para el volumen compartido de clúster (CSV) 2.0 que incluyen un nuevo sistema de archivos, cambios en el escritor CSV, cambios en la copia de sombra CSV y mejoras en la copia de seguridad CSV.' 
+---
+= CSV 2.0 en Windows Server 2012 y posterior
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Windows Server 2012 y versiones posteriores proporcionan nuevas funciones para el volumen compartido de clúster (CSV) 2.0 que incluyen un nuevo sistema de archivos, cambios en el escritor CSV, cambios en la copia de sombra CSV y mejoras en la copia de seguridad CSV.
+
+Windows Server 2012 y versiones posteriores incluyen los siguientes cambios en CSV 2.0:
+
+* El sistema de archivos CSV (CSVFS) está disponible en todos los nodos del clúster como un nuevo sistema de archivos distribuido.
+* El escritor CSV sirve metadatos a nivel de volumen y componentes del nodo que no solicita los volúmenes CSV y actúa como proxy, ya que incluye los escritores de Hyper-V del nodo remoto para la sesión de backup.
+* El proveedor de instantáneas CSV actúa como proveedor de software predeterminado para volúmenes CSV y coordina la congelación de VSS y la descongelación de VSS en todos los nodos del clúster para proporcionar coherencia de aplicaciones y fallos.
++
+El proveedor de instantáneas CSV garantiza que se pueda escribir un volumen Snapshot de CSV en el nodo solicitante.
+
+* El volumen compartido en clúster admite ahora un volumen Snapshot para aplicaciones en todos los volúmenes compartidos en cluster para varios equipos virtuales.
++
+El volumen CSV del volumen Snapshot queda expuesto a todos los nodos propietarios de la máquina virtual para realizar la recuperación automática.
+
++
+El volumen compartido en clúster solo va al modo de I/o redirigido durante la creación de la copia Snapshot, no durante el backup.
+
+

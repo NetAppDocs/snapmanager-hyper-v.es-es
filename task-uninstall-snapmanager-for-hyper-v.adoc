@@ -1,0 +1,29 @@
+---
+permalink: task-uninstall-snapmanager-for-hyper-v.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, windows, server, control, panel, uninstall, application, operating, system, remote, host, protection 
+summary: Puede desinstalar SnapManager for Hyper-V del servidor de Windows mediante la aplicación de desinstalación del Panel de control para el sistema operativo. 
+---
+= Desinstale SnapManager para Hyper-V
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede desinstalar SnapManager for Hyper-V del servidor de Windows mediante la aplicación de desinstalación del Panel de control para el sistema operativo. Puede desinstalar de forma remota SnapManager for Hyper-V en nodos o hosts independientes de clúster mediante el asistente instalación remota de host desde el panel Actions de la ventana Protection.
+
+.Acerca de esta tarea
+Al desinstalar SnapManager para Hyper-V, se eliminan todos los conjuntos de datos y las políticas. No es posible recuperar la información una vez completada la desinstalación. Si desea guardar los conjuntos de datos y la información de configuración del host, puede exportarlos antes de desinstalar.
+
+.pasos
+. En el servidor Windows donde instaló SnapManager para Hyper-V, desplácese hasta el Panel de control y seleccione MENU:Panel de control[programas > programas y características].
+. Desplácese por la lista de programas instalados para buscar SnapManager for Hyper-V.
+. Haga clic en el nombre del programa y, a continuación, haga clic en *Desinstalar*.
+. Cuando se le solicite que confirme la desinstalación, haga clic en *Sí*.
+
+
+*Información relacionada*
+
+xref:task-import-or-export-host-and-dataset-configuration-information.adoc[Importar o exportar información de configuración de hosts y conjuntos de datos]

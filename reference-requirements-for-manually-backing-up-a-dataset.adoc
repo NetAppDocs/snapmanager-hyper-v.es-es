@@ -1,0 +1,87 @@
+---
+permalink: reference-requirements-for-manually-backing-up-a-dataset.html 
+sidebar: sidebar 
+keywords: backup, dataset, manual, first, name, describe, type, option, retention, policy, requirement 
+summary: Para realizar un backup manual de un conjunto de datos, primero debe asignar el nombre y describir dicho conjunto de datos, elegir el tipo y las opciones de backup, y establecer una política de retención. 
+---
+= Requisitos para realizar manualmente el backup de un conjunto de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para realizar un backup manual de un conjunto de datos, primero debe asignar el nombre y describir dicho conjunto de datos, elegir el tipo y las opciones de backup, y establecer una política de retención.
+
+
+
+== Nombre y descripción de la copia de seguridad
+
+Debe asignar un nombre y una descripción al backup.
+
+La convención de nomenclatura predeterminada para las copias de seguridad es DatashetName_Timestamp. Es posible modificar todo en el nombre del backup excepto la Marca de hora, que siempre aparece como parte del nombre del backup.
+
+Los nombres y descripciones de las copias de seguridad se limitan a estos caracteres:
+
+* a a z
+* A a Z
+* 0 a 9
+* _ (guion bajo)
+* - (guión)
+
+
+
+
+== Elección de políticas
+
+Debe decidir qué política desea usar para el backup bajo demanda.
+
+Puede seleccionar una política específica en el asistente Backup. Puede anular la política de retención o replicación, así como los scripts asociados con la política, sin cambiar la propia política.
+
+También puede elegir None, lo que permite realizar un backup bajo demanda sin crear políticas. Esta opción utiliza los valores predeterminados para las políticas de retención, las políticas de replicación y los scripts.
+
+
+
+== Valor de retención
+
+Puede elegir pasar por alto la política de retención especificada en la política seleccionada. Si hace esto, debe decidir cuál es la duración mínima de tiempo que desea mantener las copias de backup cada hora, día, semana, mes o ilimitadas antes de que se eliminen.
+
+Es posible conservar los backups en función del tiempo o de una cantidad de backups específica. Por ejemplo, puede mantener las 10 copias de seguridad más recientes o eliminar copias de seguridad anteriores a 15 días.
+
+
+
+== Tipo de backup
+
+Puede realizar un backup coherente con las aplicaciones o coherente con los fallos.
+
+
+
+== Opciones de backup
+
+Puede permitir copias de seguridad de estado guardadas.
+
+El comportamiento predeterminado de SnapManager para Hyper-V es conmutar un backup si no se puede realizar un backup de uno o más equipos virtuales en línea. Si una máquina virtual se encuentra en el estado guardado o apagado, no podrá realizar una copia de seguridad en línea. En algunos casos, las máquinas virtuales se encuentran en el estado guardado o se cierran para realizar el mantenimiento, pero los backups deben continuar, incluso si no es posible realizar una copia de seguridad en línea. Para ello, puede mover las máquinas virtuales que están en estado guardado o apagarlas a un conjunto de datos diferente, una con una política que permite realizar backups de estado guardados.
+
+También puede modificar la política existente si selecciona la casilla de comprobación allow Saved VM backup. Esto permite a SnapManager para Hyper-V realizar backups de la máquina virtual en estado guardado. Si selecciona esta opción, SnapManager para Hyper-V no fallará el backup cuando el escritor VSS de Hyper-V realice una copia de seguridad de la máquina virtual en el estado guardado o realice una copia de seguridad sin conexión de la máquina virtual. Si se realiza un backup en estado guardado o sin conexión, se pueden producir tiempos de inactividad.
+
+La `distributed application-consistent backup` Esta función permite que varias máquinas virtuales que se ejecutan en los nodos del clúster de partners sean coherentes en una única copia Snapshot de hardware realizada desde el nodo de backup. Esta función es compatible con todas las máquinas virtuales que se ejecutan en un volumen de CSV de 2.0 Windows en varios nodos de un clúster de conmutación por error de Windows.
+
+
+
+== Almacenamiento secundario en un backup de SnapMirror
+
+Estas opciones le permiten aceptar opciones aplicables a un almacenamiento secundario definido en una relación de SnapMirror. Puede seleccionar *Actualizar SnapMirror después de la copia de seguridad*. En el panel de opciones de la etiqueta del almacén, puede seleccionar *Actualizar SnapVault después de la copia de seguridad*. Si selecciona *Actualizar SnapVault después de la copia de seguridad*, debe seleccionar una etiqueta de almacén en el menú desplegable o introducir una etiqueta personalizada.
+
+
+
+== Scripts de backup
+
+Es posible anular las opciones de script especificadas en la política seleccionada.
+
+Estos scripts se ejecutan en todos los hosts miembros del conjunto de datos, a menos que indique un host específico en el script.
+
+*Información relacionada*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet: Hyper-V"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-buvault/home.html["Guía exprés de backup de volúmenes mediante SnapVault de ONTAP 9"]

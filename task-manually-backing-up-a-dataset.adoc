@@ -1,0 +1,40 @@
+---
+permalink: task-manually-backing-up-a-dataset.html 
+sidebar: sidebar 
+keywords: create, on-demand, backup, dataset, back, up, manual 
+summary: Puede crear un backup bajo demanda de un conjunto de datos. 
+---
+= Realizar manualmente una copia de seguridad de un conjunto de datos
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede crear un backup bajo demanda de un conjunto de datos.
+
+.Lo que necesitará
+Debe tener disponible la siguiente información:
+
+* Nombre y descripción de la copia de seguridad
+* Nombre de la directiva, si es necesario
+* Información de anulación de directivas (si tiene previsto cambiar alguna de las opciones de directiva especificadas anteriormente)
+* Tipo de backup
+* Información sobre las opciones de backup
+
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[Datasets].
+. Seleccione el conjunto de datos para el que desea crear una copia de seguridad manual y haga clic en *copia de seguridad*.
++
+Aparecerá el asistente *copia de seguridad*.
+
+. Complete los pasos del asistente para crear su backup bajo demanda.
++
+Al cerrar el asistente no se cancela la copia de seguridad bajo demanda.
+
+
+
+.Resultados
+Puede ver el estado del backup bajo demanda en la ventana Jobs Management.

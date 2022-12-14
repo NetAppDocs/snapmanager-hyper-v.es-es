@@ -1,0 +1,69 @@
+---
+permalink: reference-either-the-specified-vm-s-are-not-present-or-they-cannot-be-backed-up-online.html 
+sidebar: sidebar 
+keywords: vm, present, backed, up, online 
+summary: Las máquinas virtuales especificadas no están presentes o no se puede realizar el backup en línea 
+---
+= Las máquinas virtuales especificadas no están presentes o no se puede realizar el backup en línea
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Mensaje*
++
+`Either the specified VM(s) are not present or they cannot be backed up online`
+
+* *Descripción*
++
+Uno de los motivos por los que se produce este mensaje es que se producen errores en los backups coherentes con las aplicaciones si el tamaño del disco en modo de paso del equipo virtual es inferior a 300 MB. El registro de errores se parecerá al siguiente ejemplo:
+
++
+[listing]
+----
+Log Name:      Application
+Source:        SnapMgrServiceHost
+Date:          11/12/2012 12:24:28 PM
+Event ID:      106
+Task Category: Backup Event
+Level:         Error
+Keywords:      Classic
+User:          N/A
+Computer:      defiant16.wak-qa.com
+Description:
+SnapManager for Hyper-V backup failed to complete
+
+Backup Failed for the following VM(s) since it cannot be backedup online or No VM to be found for backup
+               VM Name: demovm-0
+----
++
+No hay ningún otro mensaje de error de aplicación o del sistema para indicar el error.
+
+* *Acción Correctiva*
++
+Puede cambiar el tamaño del disco en modo de paso a más de 300 MB o ejecutar el backup con la opción permitir copia de seguridad de VM de estado guardado activada.
+
++
+
+NOTE: Esta acción correctiva se puede aplicar tanto en entornos SAN COMO NAS.
+
+* *Mensaje*
++
+`Either the specified VM(s) are not present or they cannot be backed up online`
+
+* *Descripción*
++
+Un segundo motivo por el que se produce este mensaje es que Windows no puede realizar un backup en línea de este sistema porque está habilitada la opción de copias Snapshot de ámbito para las máquinas virtuales de Hyper-V. Las instantáneas de ámbito se utilizan principalmente con las actualizaciones críticas de Windows.
+
+* *Acción Correctiva*
++
+Debe deshabilitar el `scoped snapshots` Opción creando un DWORD `ScopeSnapshots` parámetro con valor 0 en:
+
++
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\SystemRestore\`
+
++
+
+NOTE: Esta acción correctiva se puede aplicar tanto en entornos SAN COMO NAS.
+
+

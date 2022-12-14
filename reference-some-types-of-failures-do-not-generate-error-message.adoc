@@ -1,0 +1,25 @@
+---
+permalink: reference-some-types-of-failures-do-not-generate-error-message.html 
+sidebar: sidebar 
+keywords: backup, failure, result, partial 
+summary: Algunos tipos de errores de backup no dan como resultado un error de backup parcial. 
+---
+= Algunos tipos de errores de backup no dan como resultado un error de backup parcial
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Edición*
++
+Si una máquina virtual de un conjunto de datos tiene un error, SnapManager para Hyper-V no completa correctamente el backup del conjunto de datos y, en algunos casos, no genera un error parcial. En estas situaciones, el backup de todo el conjunto de datos falla.
+
+* *ejemplo*
++
+En una situación en la que un volumen de sistema de almacenamiento supera el límite de copias Snapshot de 255, SnapManager para Hyper-V genera un fallo parcial aunque el problema esté asociado a un subconjunto de equipos virtuales del conjunto de datos.
+
+* *Acción Correctiva*
++
+Para completar correctamente la operación de backup, debe reparar la máquina virtual que tiene el problema. Si eso no es posible, puede sacar temporalmente la máquina virtual del conjunto de datos, o crear un conjunto de datos que solo contenga máquinas virtuales que no tengan ningún problema.
+
+

@@ -1,0 +1,23 @@
+---
+permalink: task-view-a-hyper-v-parent-host-or-host-cluster.html 
+sidebar: sidebar 
+keywords: view, configuration, information, specific, hyper-v, parent, host, cluster, monitor, status 
+summary: Puede ver la información de configuración de un host principal o un clúster de hosts de Hyper-V específico para que pueda supervisar su estado. 
+---
+= Ver un host principal o clúster de hosts de Hyper-V.
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede ver la información de configuración de un host principal o un clúster de hosts de Hyper-V específico para que pueda supervisar su estado.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[hosts].
+. Seleccione el host o el clúster de hosts que desea ver.
++
+El panel Detalles muestra el nombre del host o del clúster de hosts, el dominio, los miembros del clúster (si corresponde) y los mensajes de configuración. Si selecciona un host que no está configurado, el panel Detalles muestra información acerca de lo que no está configurado.
+
+

@@ -1,0 +1,56 @@
+---
+permalink: reference-requirements-for-remote-host-install.html 
+sidebar: sidebar 
+keywords: remote, host, install, wizard, snapmanager, hyper-v, host, node, require, detail, requirement 
+summary: Antes de usar el asistente de instalación de host remoto para instalar de forma remota SnapManager para Hyper-V en un host o nodo, debe recopilar algunos detalles del host necesarios. 
+---
+= Requisitos para usar el asistente de instalación de host remoto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Antes de usar el asistente de instalación de host remoto para instalar de forma remota SnapManager para Hyper-V en un host o nodo, debe recopilar algunos detalles del host necesarios.
+
+Puede acceder al asistente instalación remota de host desde el panel acciones de la ventana Protección. Le permite instalar o desinstalar de forma remota SnapManager para Hyper-V en nodos o hosts independientes del clúster.
+
+Si añade un host que no tiene SnapManager para Hyper-V, el asistente Add Host le solicita que lo instale en el host.
+
+* *Instalar o desinstalar*
++
+Debe elegir si desea utilizar el asistente para instalar o desinstalar de forma remota SnapManager para Hyper-V en hosts o nodos.
+
+* *Por servidor o por almacenamiento*
++
+Debe elegir si instalar SnapManager para Hyper-V en cada servidor o por almacenamiento.
+
+* *Nombre de host/IP*
++
+Debe proporcionar el nombre o la dirección IP del host en el que desea instalar SnapManager para Hyper-V. Puede seleccionar *examinar...* para buscar el host o el nodo.
+
+* *Puerto*
++
+Debe proporcionar el número de puerto para conectarse con el host o el nodo.
+
+* *Clave de licencia de SMHV*
++
+Debe proporcionar la clave de licencia de SnapManager para Hyper-V.
+
+* *Clave de licencia SDW*
++
+Debe proporcionar la clave de licencia de SnapDrive para Windows.
+
+* *Nombre de usuario*
++
+Debe proporcionar el nombre de usuario de nivel de administrador de host o nodo con el formato _domain\username_.
+
+* *Contraseña*
++
+Debe introducir la contraseña del host o del nodo.
+
+* *Confirmar contraseña*
++
+Debe volver a introducir la contraseña del host o del nodo para confirmarla.
+
+

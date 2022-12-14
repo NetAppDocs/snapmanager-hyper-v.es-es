@@ -1,0 +1,27 @@
+---
+permalink: task-update-the-dataset-and-snapinfo-across-all-nodes.html 
+sidebar: sidebar 
+keywords: perform, cluster, os, rolling, upgrade, dataset, snapinfo, node, updating, update 
+summary: Después de realizar una actualización gradual del sistema operativo del clúster, debe actualizar el conjunto de datos y SnapInfo en todos los nodos. 
+---
+= Actualizar el conjunto de datos y SnapInfo en todos los nodos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Después de realizar una actualización gradual del sistema operativo del clúster, debe actualizar el conjunto de datos y SnapInfo en todos los nodos.
+
+.Lo que necesitará
+++ ++
+
+
+NOTE: Cluster Rolling Upgrade es compatible desde Windows Server 2016 a Windows Server 2019; el backup de discos compartidos no es compatible con sistemas operativos de modo mixto.
+
+.Pasos
+. Edite todos los conjuntos de datos del nodo Windows 2012 R2.
+. Verifique que todos los conjuntos de datos disponibles estén visibles en el nodo Windows 2016.
+. Defina la ruta de SnapInfo en el nodo de Windows 2012 R2.
+. Compruebe que se muestra la ruta de SnapInfo correcta en el nodo Windows 2016.
+

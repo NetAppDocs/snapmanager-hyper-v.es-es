@@ -1,0 +1,38 @@
+---
+permalink: reference-space-consumption-when-making-two-snapshot-copies-for-each-backup.html 
+sidebar: sidebar 
+keywords: space, consumption, snapshot, copies, copy, backup 
+summary: Consumo de espacio al hacer dos copias Snapshot para cada backup. 
+---
+= Consumo de espacio al hacer dos copias Snapshot para cada backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Edición*
++
+Por cada backup que contenga objetos de Hyper-V, se crean dos copias Snapshot, lo que puede dar lugar a dudas sobre el consumo de espacio.
+
++
+
+NOTE: Esto solo es aplicable a los backups coherentes con las aplicaciones.
+
+* *Causa*
++
+El escritor de VSS de Microsoft Hyper-V crea copias de backup coherentes con las aplicaciones y con los equipos virtuales, con las aplicaciones que residen en discos duros virtuales. Para crear copias de backup consistentes con el software y consistentes con las máquinas virtuales, VSS emplea el proceso de recuperación automática nativo, que establece la máquina virtual en un estado coherente con la copia Snapshot del software. El escritor de VSS de Hyper-V se pone en contacto con cada equipo virtual del backup y crea una copia snapshot coherente con el software.
+
++
+Una vez creadas las copias Snapshot, la partición principal crea una copia Snapshot VSS de todo el disco (LUN) que aloja estas máquinas virtuales. Una vez creada la copia Snapshot de la partición principal, VSS requiere el montaje de la partición principal creada previamente para devolver cada uno de los equipos virtuales al estado coherente con el software y eliminar los cambios realizados en los equipos virtuales una vez creada la copia Snapshot del software. Estas modificaciones a los discos duros virtuales deben ser persistentes. Dado que estas copias Snapshot son de solo lectura de forma predeterminada, se debe realizar una nueva copia de Snapshot para conservar las copias actualizadas de los discos duros virtuales. Por este motivo, se crea una segunda copia snapshot del volumen. Esta copia Snapshot se etiqueta con el sufijo *_backup* y es la copia de backup utilizada en las operaciones de restauración.
+
+* *Acción Correctiva*
++
+Las dos copias Snapshot se consideran un par. Cuando el período de retención finaliza para el backup, se eliminan ambas copias Snapshot. No se debe eliminar manualmente la primera copia de Snapshot porque es necesario para las operaciones de restauración.
+
++
+Microsoft VSS admite la realización de backups de máquinas virtuales únicamente en el host propietario del volumen compartido de clúster (CSV), de modo que la propiedad de CSV cambia entre los nodos para crear backups de las máquinas virtuales de cada host del clúster.
+
++
+Al realizar un backup de un volumen compartido en clúster, SnapManager para Hyper-V crea dos copias snapshot por host en el clúster que ejecuta una máquina virtual desde dicho volumen compartido en clúster. Esto significa que si realiza el backup de 15 equipos virtuales en un único volumen compartido en clúster y estos equipos virtuales se dividen de forma uniforme en tres servidores de Hyper-V, habrá un total de seis copias Snapshot por backup.
+
+

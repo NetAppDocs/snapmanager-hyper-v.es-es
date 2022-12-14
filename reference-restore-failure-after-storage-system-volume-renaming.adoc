@@ -1,0 +1,30 @@
+---
+permalink: reference-restore-failure-after-storage-system-volume-renaming.html 
+sidebar: sidebar 
+keywords: restore, failure, storage, system, volume, renaming, rename 
+summary: Error de restauración después del cambio de nombre del volumen del sistema de almacenamiento. 
+---
+= Error de restauración después del cambio de nombre del volumen del sistema de almacenamiento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Mensaje*
++
+`Some of the storage system snapshots required to restore the VM are missing or inconsistent.`
+
+* *Descripción*
++
+Si se cambia el nombre de los volúmenes del sistema de almacenamiento, no es posible restaurar una máquina virtual (VM) a partir de su backup creado antes de cambiar el nombre de los volúmenes.
+
+* *Acción Correctiva*
++
+Si se cambia el nombre de los volúmenes del sistema de almacenamiento y es necesario restaurar una máquina virtual desde un backup creado antes de cambiar el nombre de los volúmenes, complete lo siguiente:
+
++
+** Al restaurar un equipo virtual desde MMC, asegúrese de que la opción "Activar verificación de instantánea" está desactivada en la página *Opciones de restauración* del asistente Restaurar.
+** Aunque restaure una máquina virtual mediante PowerShell, asegúrese de que lo ha hecho -`DisableVerifySnapshot` se especifica el parámetro.
+
+
+

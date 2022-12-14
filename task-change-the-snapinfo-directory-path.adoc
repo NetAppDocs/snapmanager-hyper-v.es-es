@@ -1,0 +1,57 @@
+---
+permalink: task-change-the-snapinfo-directory-path.html 
+sidebar: sidebar 
+keywords: control, snapinfo, directory, path, setting, configuration, wizard, action, changing, change 
+summary: Puede controlar la configuración de la ruta de directorios de SnapInfo empleando el asistente de configuración de o la acción de configuración de SnapInfo. 
+---
+= Cambie la ruta del directorio SnapInfo
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede controlar la configuración de la ruta de directorios de SnapInfo utilizando el asistente de configuración o la acción *configuraciones de SnapInfo*.
+
+.Acerca de esta tarea
+Los ajustes de directorios de SnapInfo se especifican en el nivel de host de SnapManager para Hyper-V. SnapManager para Hyper-V es compatible con los hosts NAS (SMB) y los hosts SAN. En el caso de hosts SAN, los ajustes de SnapInfo se aplican en el nivel de volumen; en el caso de hosts NAS, los ajustes de SnapInfo se aplican en el nivel de recurso compartido de SMB.
+
+Si ha añadido la dirección IP del sistema de almacenamiento a SnapDrive para Windows TPS, las configuraciones de almacenamiento de SnapDrive para Windows se completan de forma automática cuando se ejecuta el asistente de configuración de SnapManager para Hyper-V. Si no ha configurado SnapDrive para Windows TPS, debe especificar la dirección IP del sistema de almacenamiento en la pestaña Manage Storage Connections de SnapManager para Hyper-V.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[hosts].
+. Seleccione el host para el que desea cambiar la ruta del directorio SnapInfo.
+. En el panel *acciones*, seleccione *configuraciones de SnapInfo*.
++
+Se abre el cuadro de diálogo *Configuración de SnapInfo*.
+
+. Seleccione el tipo de almacenamiento de las opciones que se muestran:
++
+|===
+| Opción | Descripción 
+
+
+ a| 
+SAN
+ a| 
+Este es el tipo de almacenamiento predeterminado.
+
+
+
+ a| 
+NAS
+ a| 
+Utilice esta opción para los recursos compartidos de SMB.
+
+|===
+. Haga clic en *examinar*.
++
+Se abre la ventana Buscar carpeta.
+
+. Seleccione el sistema de almacenamiento SnapInfo (SAN) o el volumen (NAS) y haga clic en *OK*.
++
+Los hosts que se muestran son recursos compartidos NAS correspondientes a los sistemas de almacenamiento que se han registrado mediante el `Manage Storage Connections` opción en el nivel de host. Si no ve los recursos compartidos que está buscando, asegúrese de hacerlo `Manage Storage Connections` se ha configurado correctamente.
+
+. En la ventana *Configuración de SnapInfo*, haga clic en *Aceptar*.
+

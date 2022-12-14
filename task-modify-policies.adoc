@@ -1,0 +1,26 @@
+---
+permalink: task-modify-policies.html 
+sidebar: sidebar 
+keywords: modify, policies, policy, protect, dataset, wizard 
+summary: Puede modificar las políticas que protegen sus conjuntos de datos mediante el asistente Modify Policy. 
+---
+= Modificar políticas
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede modificar las políticas que protegen sus conjuntos de datos mediante el asistente Modify Policy.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[Datasets].
+. Seleccione el conjunto de datos que contiene las políticas que desea modificar.
+. Seleccione la política que desee modificar.
+. En el panel acciones, haga clic en *Modificar directiva*.
++
+Aparecerá el asistente Modify Policy.
+
+. Complete los pasos del asistente para modificar la política de protección de su conjunto de datos.
+

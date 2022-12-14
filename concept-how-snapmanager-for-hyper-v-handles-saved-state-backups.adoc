@@ -1,0 +1,20 @@
+---
+permalink: concept-how-snapmanager-for-hyper-v-handles-saved-state-backups.html 
+sidebar: sidebar 
+keywords: default, behavior, snapmanager, hyper-v, backup, contain, virtual, machine, save, state, shut, down, saved-state 
+summary: Aunque el comportamiento predeterminado de SnapManager para Hyper-V es hacer que los backups que contengan máquinas virtuales que estén en estado guardado se cierren o fallen, puede realizar un backup de estado guardado moviendo las máquinas virtuales a un conjunto de datos con una política que permita realizar backups de estado guardado. 
+---
+= Cómo gestiona SnapManager para Hyper-V los backups de estado guardado
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Aunque el comportamiento predeterminado de SnapManager para Hyper-V es hacer que los backups que contengan máquinas virtuales que estén en estado guardado se cierren o fallen, puede realizar un backup de estado guardado moviendo las máquinas virtuales a un conjunto de datos con una política que permita realizar backups de estado guardado.
+
+También puede crear o editar la política de sus conjuntos de datos para permitir un backup de máquina virtual de estado guardado. Si elige esta opción, SnapManager para Hyper-V no provocará un error en el backup cuando el escritor de VSS de Hyper-V realice un backup de la máquina virtual con el estado guardado o realice una copia de seguridad sin conexión de la máquina virtual. Sin embargo, si se realiza un backup en estado guardado o sin conexión, se pueden producir tiempos de inactividad.
+
+*Información relacionada*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet: Hyper-V"]

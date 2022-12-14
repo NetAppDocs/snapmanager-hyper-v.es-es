@@ -1,0 +1,54 @@
+---
+permalink: reference-hyper-v-parent-host-requirements.html 
+sidebar: sidebar 
+keywords: hyper-v, parent, host, physical, server, enable, contain, virtual, machine, snapmanager, requirement 
+summary: Los hosts principales de Hyper-V son servidores físicos en los que se activa la función de Hyper-V. 
+---
+= Requisitos del host principal de Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Los hosts principales de Hyper-V son servidores físicos en los que se activa la función de Hyper-V. Los servidores host que contienen máquinas virtuales se añaden a SnapManager para Hyper-V con el fin de ofrecer protección y recuperación. Para instalar y ejecutar todos los componentes de software de SnapManager para Hyper-V, debe asegurarse de que los hosts principales de Hyper-V cumplen con los requisitos mínimos del sistema operativo y de Hyper-V.
+
+* *Sistemas operativos compatibles*
++
+SnapManager para Hyper-V se ejecuta en los siguientes sistemas operativos:
+
++
+** Windows Server 2008 R2 SP1
+** Windows Server 2012 R2
+** Windows Server 2012
+** Windows Server 2016
+** Windows Server 2019
+
+
+* *Sistemas operativos compatibles con la consola de administración*
++
+Las consolas de administración deben ejecutar los sistemas operativos siguientes:
+
++
+** Windows Server 2008 R2 SP1
+** Windows Server 2012 R2
+** Windows Server 2012
+** Windows Server 2016
+** Windows Server 2019
+
+
+* *Requisitos de Hyper-V*
++
+Para obtener más información, consulte la información sobre cómo empezar a utilizar Hyper-V en la biblioteca de Microsoft TechNet.
+
+* *Soporte de Internacionalización*
++
+SnapManager para Hyper-V se ha probado en sistemas operativos en alemán y en japonés.
+
+
+
+*Información relacionada*
+
+http://technet.microsoft.com/library/cc753637(WS.10).aspx["Microsoft TechNet: Hyper-V"]
+
+http://mysupport.netapp.com/matrix["Herramienta de matriz de interoperabilidad de NetApp"]

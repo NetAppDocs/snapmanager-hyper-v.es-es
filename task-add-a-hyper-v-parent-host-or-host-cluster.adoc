@@ -1,0 +1,25 @@
+---
+permalink: task-add-a-hyper-v-parent-host-or-host-cluster.html 
+sidebar: sidebar 
+keywords: add, hyper-v, parent, host, cluster, back, up, restore, virtua, machine 
+summary: Puede añadir un host primario o un clúster de hosts de Hyper-V para realizar un backup y restaurar sus máquinas virtuales. 
+---
+= Añada un host principal o un clúster de hosts de Hyper-V.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede añadir un host primario o un clúster de hosts de Hyper-V para realizar un backup y restaurar sus máquinas virtuales.
+
+.Pasos
+. En el panel de navegación, haga clic en *Protección*.
+. En el panel acciones, haga clic en *Agregar host*.
+. Ejecute el asistente *Agregar host*.
+
+
+.Después de terminar
+Cuando se añade un host a un clúster, la información sobre el nuevo host no se muestra automáticamente en la interfaz gráfica de usuario. Añada manualmente la información del host al archivo xml del directorio de instalación.
+
+Se debe instalar SnapManager para Hyper-V en cada nodo del clúster. Si no tiene instalado SnapManager para Hyper-V, se le pedirá que ejecute el asistente de instalación remota de host.

@@ -1,0 +1,26 @@
+---
+permalink: task-view-a-virtual-machine.html 
+sidebar: sidebar 
+keywords: virtual, machine, tab, vhd, detail, pane, vm, information, monitor, status, view 
+summary: En la ficha máquina virtual y VHD del panel Detalles de una máquina virtual, puede ver información acerca de esa máquina y supervisar su estado. 
+---
+= Ver una máquina virtual
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+En la ficha máquina virtual y VHD del panel Detalles de una máquina virtual, puede ver información acerca de esa máquina y supervisar su estado.
+
+.Pasos
+. En el panel de navegación, haga clic en menu:Protection[hosts > Protection > Datasets].
+. Seleccione el conjunto de datos o el host al que pertenece la máquina virtual.
+. Seleccione la máquina virtual adecuada.
+
+
+.Resultados
+La ficha máquina virtual muestra el nombre, GUID y estado de la máquina virtual seleccionada.
+
+La pestaña VHD muestra el disco del sistema, punto de montaje, ruta completa de VHD, ruta de LUN, nombre del sistema de almacenamiento, número de serie y nombre de volumen asociados con la máquina virtual seleccionada.

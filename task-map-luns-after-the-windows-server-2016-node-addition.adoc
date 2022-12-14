@@ -1,0 +1,50 @@
+---
+permalink: task-map-luns-after-the-windows-server-2016-node-addition.html 
+sidebar: sidebar 
+keywords: perform, cluster, os, rolling, upgrade, procedure, unmap, lun, windows, r2, node, server, cluster, mixed, operating, system, map 
+summary: Cuando realiza una actualización gradual de un sistema operativo de clúster, puede utilizar el siguiente procedimiento para desasignar las LUN del nodo de Windows 2012 R2 y reasignar al nodo de Windows Server 2016 después de agregarlas al clúster. 
+---
+= Asigne las LUN en modo de sistema operativo mixto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cuando realiza una actualización gradual de un sistema operativo de clúster, puede utilizar el siguiente procedimiento para desasignar las LUN del nodo de Windows 2012 R2 y reasignar al nodo de Windows Server 2016 después de agregarlas al clúster.
+
+.Lo que necesitará
+El nodo Windows Server 2016 debe agregarse al clúster.
+
+
+NOTE: La actualización gradual de clústeres es compatible de Windows Server 2016 a Windows Server 2019
+
+.Pasos
+. Inicie sesión en el Administrador del sistema de ONTAP.
+. Seleccione la LUN asignada a Windows 2012 R2.
+. Haga clic en *Editar* y seleccione *grupos de iniciadores*.
++
+image::mixed_os_mode_3.gif[modo de so mixto 3]
+
+. Desactive el igroup del nodo eliminado del clúster.
+. Añada un nuevo iGroup para todos los nodos recién añadidos de Windows 2016.
++
+image::mixed_os_mode_4.gif[modo de so mixto 4]
+
+. Seleccione la casilla de verificación junto al iGroup recién creado para asignar la LUN al host Windows 2016 que se ha agregado al clúster.
++
+image::mixed_os_mode_6.gif[modo de so mixto 6]
+
+. Repita los pasos 4 y 6 para asignar cada LUN a los nodos de Windows 2016.
++
+Todos los LUN deben estar visibles en el nodo Windows 2016.
+
+. Vuelva a analizar los discos de la herramienta de administración de discos en los nodos de Windows 2016.
++
+image::mixed_os_mode_8.gif[modo de so mixto 8]
+
+. Añada la LIF de gestión del almacenamiento en las nuevas configuraciones del protocolo de transporte de SnapDrive (TPS) de Windows 2016 y actualice los discos.
++
+image::mixed_os_mode_9.gif[modo de so mixto 9]
+
+

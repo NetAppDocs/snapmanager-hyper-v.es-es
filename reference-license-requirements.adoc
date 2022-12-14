@@ -1,0 +1,38 @@
+---
+permalink: reference-license-requirements.html 
+sidebar: sidebar 
+keywords: run, snapmanager, hyper-v, select, host-based, storage, system, license, installation, license 
+summary: Para ejecutar SnapManager para Hyper-V, debe seleccionar las licencias basadas en host o del sistema de almacenamiento durante la instalación de las licencias. 
+---
+= Requisitos de licencia
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para ejecutar SnapManager para Hyper-V, debe seleccionar las licencias basadas en host o del sistema de almacenamiento durante la instalación de las licencias.
+
+
+
+== Licencia de la suite SnapManager
+
+Se requiere una licencia de suite de SnapManager en el sistema host de Windows. Puede elegir una licencia basada en host o una licencia del sistema de almacenamiento.
+
+
+
+== Por licencia de servidor
+
+Esto también se conoce como _host-based licensing_. Si selecciona la licencia basada en host, debe proporcionar una clave de licencia de la suite de SnapManager durante la instalación. Puede cambiar más adelante si lo necesita. Puede cambiar la clave de licencia después de la instalación haciendo clic en *Ajustes de licencia* en la ventana de bienvenida de SnapManager para Hyper-V. Cada host primario requiere una licencia de SnapManager Suite.
+
+
+
+== Por licencia de sistema de almacenamiento
+
+Esto también se conoce como _licencia del sistema de almacenamiento_. Si selecciona una licencia del sistema de almacenamiento, debe añadir la licencia de suite de SnapManager a todos los sistemas de almacenamiento para ejecutar las operaciones de SnapManager para Hyper-V.
+
+
+
+== Por licencia de sistema cliente
+
+Debe utilizar esta opción de licencia cuando instale la consola de administración.

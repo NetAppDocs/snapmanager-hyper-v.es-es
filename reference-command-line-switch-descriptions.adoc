@@ -1,0 +1,165 @@
+---
+permalink: reference-command-line-switch-descriptions.html 
+sidebar: sidebar 
+keywords: command, line, switch, perform, silent, installation, enable, script, snapmanager, hyper-v 
+summary: Puede utilizar los switches de la línea de comandos para realizar una instalación silenciosa, lo que permite utilizar un script de instalación para instalar SnapManager para Hyper-V. 
+---
+= Lista y descripción de los conmutadores de línea de comandos para la instalación silenciosa
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede utilizar los switches de la línea de comandos para realizar una instalación silenciosa, lo que permite utilizar un script de instalación para instalar SnapManager para Hyper-V.
+
+En la siguiente tabla se proporciona una lista de valores y se describe cada uno de los switches de instalación de la línea de comandos disponibles.
+
+|===
+| Conmutador | Valor | Descripción 
+
+
+ a| 
+SILENT_MODE=
+ a| 
+1
+ a| 
+Permite que SnapManager para Hyper-V ejecute correctamente la función de instalación desatendida. Este switch es necesario para la primera instalación, actualizaciones y desinstalaciones completas.
+
+
+
+ a| 
+REINSTALLMODE=
+ a| 
+ a| 
+Especifica el modo de reinstalación que se va a utilizar.
+
+
+
+ a| 
+REINSTALLMODE=
+ a| 
+v
+ a| 
+Indica que la instalación se ejecuta desde el paquete de origen y que el paquete local se almacena en caché. No utilice esta opción para las instalaciones por primera vez de SnapManager para Hyper-V. Vuelve a instalar todos los archivos independientemente de la versión, la fecha o el valor de suma de comprobación.
+
+
+
+ a| 
+REINSTALLMODE=
+ a| 
+a.
+ a| 
+Reinstala los archivos de SnapManager para Hyper-V si hay versiones anteriores o si faltan archivos.
+
+
+
+ a| 
+REINSTALLMODE=
+ a| 
+o
+ a| 
+Indica que deben reescribirse todas las entradas de registro necesarias de SnapManager para Hyper-V de HKEY_LOCAL_MACHINE y HKEY_CLASSES_ROOT.
+
+
+
+ a| 
+REINSTALLMODE=
+ a| 
+m
+ a| 
+Indica que deben reescribirse todas las entradas de registro necesarias de SnapManager para Hyper-V de HKEY_CURRENT_USER y HKEY_USERS.
+
+
+
+ a| 
+REINSTALLMODE=
+ a| 
+u
+ a| 
+Vuelve a instalar todos los accesos directos y recicla todos los iconos, sobrescribiendo los accesos directos e iconos existentes.
+
+
+
+ a| 
+REINSTALAR=
+ a| 
+TODO
+ a| 
+Vuelve a instalar todas las funciones de SnapManager para Hyper-V.
+
+
+
+ a| 
+/Li
+ a| 
+nombre de archivo
+ a| 
+Especifica que se debe generar un registro de instalación de SnapDrive.
+
+
+
+ a| 
+SMHV_LICENSE=
+ a| 
+licencia
+ a| 
+Especifica la licencia de SnapManager para Hyper-V adecuada y válida.
+
+
+
+ a| 
+INSTALLDIR=
+ a| 
+directorio de instalación de destino
+ a| 
+Especifica el directorio de instalación de destino en el que está instalado SnapManager para Hyper-V. Este switch solo es necesario cuando se instala SnapManager para Hyper-V por primera vez.
+
+
+
+ a| 
+SVCUSERNAME=
+ a| 
+DOMINIO\nombre de usuario
+ a| 
+Especifica el dominio y el nombre de usuario que utiliza SnapManager para Hyper-V durante la instalación desatendida.
+
+
+
+ a| 
+SMHVSRV_PASSWORD=
+ a| 
+contraseña
+ a| 
+Especifica la contraseña para el usuario SMHVSRV_PASSWORD.
+
+
+
+ a| 
+SMHVSRV_CONFIRMUSERPASSWORD=
+ a| 
+contraseña
+ a| 
+Confirma la contraseña para el usuario SMHVSRV_CONFIRMUSERPASSword.
+
+
+
+ a| 
+SMHV_WEBSRV_TCP_PORT
+ a| 
+número de puerto
+ a| 
+Especifica qué puerto utiliza el servicio web de SnapManager para Hyper-V para Net.TCP. El puerto predeterminado es 808.
+
+|===
+La siguiente sintaxis muestra una instalación nueva:
+
+`setup.exe /s /v"/qn SILENT_MODE=1 /L*v SMHVInstall.log SVCUSERNAME=Domain\User Name SMHVSRV_PASSWORD=password SMHVSRV_CONFIRMUSERPASSWORD=password"`
+
+La siguiente sintaxis muestra una actualización:
+
+`setup.exe /s /v"/qn REINSTALLMODE=vamus REINSTALL=ALL SILENT_MODE=1 /L*v SMHVUpgrade.log SVCUSERNAME=Domain\User Name SMHVSRV_PASSWORD=password SMHVSRV_CONFIRMUSERPASSWORD=password"`
+
+La siguiente sintaxis muestra una desinstalación:
+
+`Setup.exe /s /x /v"/qn SILENT_MODE=1 /L*v SMHVuninstall.log"`

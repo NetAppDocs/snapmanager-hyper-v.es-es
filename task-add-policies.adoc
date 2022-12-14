@@ -1,0 +1,35 @@
+---
+permalink: task-add-policies.html 
+sidebar: sidebar 
+keywords: add, retention, schedule, scheduling, replication, policies, policy, script, dataset, data, protect 
+summary: Puede añadir políticas de retención, programación y replicación, así como scripts, a sus conjuntos de datos para poder proteger los datos. 
+---
+= Agregar políticas
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede añadir políticas de retención, programación y replicación, así como scripts, a sus conjuntos de datos para poder proteger los datos.
+
+.Lo que necesitará
+Debe tener disponible la siguiente información:
+
+* Nombres y descripciones de políticas
+* Información de retención
+* Información de programación
+* Información sobre las opciones de backup
+* Información de scripts de backup
+
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[Datasets].
+. Seleccione el conjunto de datos al que desea agregar políticas.
+. En el panel acciones, haga clic en *Agregar directiva*.
++
+Aparece el asistente Create Policy.
+
+. Complete los pasos del asistente para crear políticas de protección para su conjunto de datos.
+

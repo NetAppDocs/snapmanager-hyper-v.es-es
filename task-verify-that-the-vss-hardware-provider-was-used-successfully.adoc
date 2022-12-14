@@ -1,0 +1,35 @@
+---
+permalink: task-verify-that-the-vss-hardware-provider-was-used-successfully.html 
+sidebar: sidebar 
+keywords: verify, data, ontap, vss, hardware, provider, successful, snapshot, copy 
+summary: Puede verificar que el proveedor de hardware VSS de Data ONTAP se haya utilizado correctamente después de realizar una copia Snapshot. 
+---
+= Compruebe que el proveedor de hardware de VSS se haya utilizado correctamente
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede verificar que el proveedor de hardware VSS de Data ONTAP se haya utilizado correctamente después de realizar una copia Snapshot.
+
+.Pasos
+. Vaya al menú:Herramientas del sistema[Visor de eventos > aplicación] en MMC y busque un evento con los siguientes valores:
++
+|===
+| Origen | ID del evento | Descripción 
+
+
+ a| 
+Navssprv
+ a| 
+4089
+ a| 
+El proveedor de VSS ha completado correctamente CommitSnapshots para la ID de SnapshotSetId en n milisegundos.
+
+|===
+
+
+
+NOTE: VSS requiere que el proveedor confirme una copia snapshot en 10 segundos. Si se supera este límite de tiempo, el proveedor de hardware VSS de Data ONTAP registra el identificador de evento 4364. Este límite se podría superar debido a un problema transitorio. Si este evento se registra para un backup con errores, vuelva a intentar el backup.

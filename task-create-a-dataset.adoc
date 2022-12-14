@@ -1,0 +1,36 @@
+---
+permalink: task-create-a-dataset.html 
+sidebar: sidebar 
+keywords: create, creating, dataset, virtual, machine, resource, protection, requirement 
+summary: Puede crear conjuntos de datos para recursos de máquinas virtuales que compartan los mismos requisitos de protección. Si es necesario, puede agregar máquinas virtuales a varios conjuntos de datos. 
+---
+= Crear un conjunto de datos
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede crear conjuntos de datos para recursos de máquinas virtuales que compartan los mismos requisitos de protección. Si es necesario, puede agregar máquinas virtuales a varios conjuntos de datos.
+
+.Lo que necesitará
+Debe tener disponible la siguiente información:
+
+* Nombre y descripción del conjunto de datos
+* Recursos de equipo virtual que planifique añadir al conjunto de datos
+
+
+.Acerca de esta tarea
+Los discos dedicados y compartidos que pertenecen al mismo clúster de host no deben colocarse en el mismo conjunto de datos. La adición de estos tipos de recursos a un único conjunto de datos puede provocar un error en el backup del conjunto de datos. Solo puede tener un tipo de equipo virtual por conjunto de datos: NAS o SAN. No puede tener conjuntos de datos de modo mixto.
+
+La casilla de comprobación Validar conjunto de datos está activada de forma predeterminada. SnapManager para Hyper-V comprueba si hay errores de configuración en todas las máquinas virtuales durante la creación o modificación de un conjunto de datos. Debe asegurarse de que la casilla de verificación no esté seleccionada si no desea habilitar la validación del conjunto de datos.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Protection[Datasets].
+. En el panel acciones, haga clic en *Crear conjunto de datos*.
+. Complete las páginas del asistente.
+
+
+.Después de terminar
+A continuación, debería agregar políticas de protección al conjunto de datos que creó.

@@ -1,0 +1,34 @@
+---
+permalink: task-import-or-export-host-and-dataset-configuration-information.html 
+sidebar: sidebar 
+keywords: manage, host, management, console, multiple, import, export, information, dataset, consistency 
+summary: Aunque debería gestionar un host únicamente desde una consola de gestión, si es necesario hacerlo desde varias consolas, puede importar y exportar la información de configuración del host y del conjunto de datos desde una consola de gestión remota a otra para garantizar la coherencia de datos. 
+---
+= Importe o exporte la información de configuración de hosts y conjuntos de datos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Aunque debería gestionar un host únicamente desde una consola de gestión, si es necesario hacerlo desde varias consolas, puede importar y exportar la información de configuración del host y del conjunto de datos desde una consola de gestión remota a otra para garantizar la coherencia de datos.
+
+.Acerca de esta tarea
+No debe importar ni exportar la información de configuración al directorio en el que está instalado SnapManager para Hyper-V. Si desinstala SnapManager para Hyper-V, este archivo se pierde.
+
+
+NOTE: Puede utilizar el asistente de importación y exportación para cambiar los ajustes de configuración del host y del conjunto de datos a un ajuste exportado previamente. Si realiza esta operación en un entorno en clúster, debe importar los ajustes de todos los nodos del clúster para que todas las configuraciones del host y del conjunto de datos sean iguales.
+
+.Pasos
+. En el panel de navegación, haga clic en *Protección*.
+. En el panel *acciones*, haga clic en *Importar y exportar*.
++
+Aparece el asistente Importar y exportar.
+
+. Complete los pasos del asistente para exportar la información de configuración del host y el conjunto de datos desde una consola de gestión a otra.
++
+
+NOTE: El archivo de exportación es estático y actual sólo en el momento en que se ejecutó el archivo de exportación.
+
+. Complete los pasos del asistente para importar la información de configuración del host y el conjunto de datos a la consola de gestión de destino.
+

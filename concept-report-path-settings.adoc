@@ -1,0 +1,22 @@
+---
+permalink: concept-report-path-settings.html 
+sidebar: sidebar 
+keywords: configure, report, path, setting, store, snapmanager, hyper-v, operation, configure, virtual, machine, dataset 
+summary: Puede configurar las opciones de la ruta de informes para que pueda almacenar informes para operaciones de SnapManager para Hyper-V. Debe configurar los ajustes de la ruta de informes antes de poder agregar recursos de equipos virtuales a un conjunto de datos. 
+---
+= Configuración de la ruta del informe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede configurar las opciones de la ruta de informes para que pueda almacenar informes para operaciones de SnapManager para Hyper-V. Debe configurar los ajustes de la ruta de informes antes de poder agregar recursos de equipos virtuales a un conjunto de datos.
+
+Si los ajustes del informe no están configurados cuando se agrega un host principal de Hyper-V a SnapManager para Hyper-V, puede configurar (e incluso cambiar) dichos ajustes más tarde, utilizando el asistente de configuración.
+
+Si configura los ajustes de la ruta de informes para un clúster de hosts primario, debe crear manualmente el directorio de informes en cada nodo del clúster. La ruta de informe no debe residir en un volumen compartido de clúster (CSV) o en un LUN compartido de clúster.
+
+*Información relacionada*
+
+http://technet.microsoft.com/library/jj612868.aspx["Microsoft TechNet: Use los volúmenes compartidos de clúster en un clúster de conmutación al nodo de respaldo"]

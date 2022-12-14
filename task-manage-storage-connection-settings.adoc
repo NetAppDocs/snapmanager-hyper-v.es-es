@@ -1,0 +1,26 @@
+---
+permalink: task-manage-storage-connection-settings.html 
+sidebar: sidebar 
+keywords: host, storage, connection, snapdrive, windows, snapmanager, hyper-v, storage, communication, protection, dataset, management 
+summary: 'Una vez que haya agregado un host, debe introducir todas las conexiones de almacenamiento \(SnapDrive para Windows y SnapManager para Hyper-V\) para utilizar Administrar las opciones de conexión de almacenamiento en Protección \> Gestión de conjuntos de datos .' 
+---
+= Permite gestionar la configuración de conexión de almacenamiento
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una vez añadido un host, debe introducir todas las conexiones de almacenamiento (SnapDrive para Windows y SnapManager para Hyper-V) para utilizar la gestión de la configuración de la conexión de almacenamiento en el menú:Protección[Gestión de conjuntos de datos].
+
+.Lo que necesitará
+Debe haber al menos un host añadido a SnapManager para Hyper-V para poder gestionar la configuración de conexión de almacenamiento.
+
+.Pasos
+. En el menú:Protection[Dataset Management], seleccione *Manage Storage Connection* Settings.
+. Añada las conexiones de almacenamiento.
++
+Todas las conexiones de almacenamiento se pueden ver en el TPS de SnapDrive para Windows.
+
+

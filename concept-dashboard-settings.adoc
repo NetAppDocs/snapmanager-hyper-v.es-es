@@ -1,0 +1,45 @@
+---
+permalink: concept-dashboard-settings.html 
+sidebar: sidebar 
+keywords: snapmanager, hyper-v, dashboard, overview, resource, protect, job, resource, history, setting 
+summary: El panel de SnapManager para Hyper-V muestra una descripción general de los recursos que se están protegiendo actualmente, así como los que no están protegidos. Es posible seleccionar diferentes segmentos del gráfico circular de VM Protection Status o del gráfico de barra Job History para ver información general sobre el estado de los trabajos, los recursos y el historial. 
+---
+= Configuración de la consola
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+El panel de SnapManager para Hyper-V muestra una descripción general de los recursos que se están protegiendo actualmente, así como los que no están protegidos. Es posible seleccionar diferentes segmentos del gráfico circular de VM Protection Status o del gráfico de barra Job History para ver información general sobre el estado de los trabajos, los recursos y el historial.
+
+image::smhv_dashboard.gif[panel de smhv]
+
+* *Estado de protección VM*
++
+Cuando se selecciona un segmento en el gráfico circular VM Protection Status, se puede ver información acerca del estado de protección de las máquinas virtuales del panel Details. Las descripciones de los valores válidos son las siguientes:
+
++
+** *OK*
++
+Muestra el backup más reciente de todos los equipos virtuales.
+
+** *Error*
++
+Muestra el backup fallido más reciente de cada máquina virtual.
+
+** *Desprotegido*
++
+Muestra las máquinas virtuales que no pertenecen a ningún conjunto de datos y, por lo tanto, están desprotegidas.
+
+
+
+* *Historial del trabajo*
++
+Al seleccionar un segmento en el gráfico de barras Historial de trabajos, puede ver, en el panel Detalles, el historial de trabajos completados, con errores y en ejecución durante un período de tiempo determinado. Puede cambiar el período de tiempo durante el que se muestran los detalles del trabajo en el gráfico de barras Historial de trabajos. El valor predeterminado es siete días.
+
+* *Configurar actualización*
++
+Puede cambiar la frecuencia con la que el panel actualiza la información mostrada mediante el botón *Configurar actualización*. El valor predeterminado es 10 minutos.
+
+

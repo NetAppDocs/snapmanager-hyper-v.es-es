@@ -1,0 +1,31 @@
+---
+permalink: reference-backup-fails-after-removing-virtual-machine-from-hyper-v-manager.html 
+sidebar: sidebar 
+keywords: backup, fail, remove, virtual, machine, hyper-v, manager 
+summary: Se produce un error en el backup después de quitar una máquina virtual de Hyper-V Manager. 
+---
+= Se produce un error en el backup después de quitar una máquina virtual de Hyper-V Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Edición*
++
+Después de quitar una máquina virtual de Hyper-V de Hyper-V Manager, se producen errores en las operaciones de backup si no se actualiza el conjunto de datos asociado con la máquina virtual.
+
+* *Causa*
++
+Este problema ocurre cuando se elimina una máquina virtual de Hyper-V de Hyper-V Manager e se intenta realizar un backup sin modificar el conjunto de datos. Además, si vuelve a crear una máquina virtual, debe modificar el conjunto de datos. SnapManager para Hyper-V crea conjuntos de datos basados en el ID de equipo virtual (GUID). Se produce un error en el backup cuando se elimina, se elimina o se vuelve a crear una máquina virtual, lo que crea un GUID nuevo. Aunque esto no activa el fallo de todo el proceso de backup, si una máquina virtual se elimina y, a continuación, se vuelve a crear con el mismo nombre, SnapManager para Hyper-V.
+
+* *Acción Correctiva*
++
+Quite la máquina virtual de la lista de conjuntos de datos de las máquinas virtuales y añada cualquier máquina virtual creada nuevamente al conjunto de datos.
+
+
+
+*Información relacionada*
+
+xref:concept-configure-datasets.adoc[Configurar conjuntos de datos]
+
+xref:task-modify-a-dataset.adoc[Modificar un conjunto de datos]

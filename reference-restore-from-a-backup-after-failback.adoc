@@ -1,0 +1,35 @@
+---
+permalink: reference-restore-from-a-backup-after-failback.html 
+sidebar: sidebar 
+keywords: restore, restoring, backup, failback 
+summary: Restauración desde una copia de seguridad después de la conmutación tras recuperación. 
+---
+= Restaurar desde una copia de seguridad después de la conmutación tras recuperación
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+* *Edición*
++
+Si realiza una conmutación al nodo de respaldo y una conmutación tras recuperación, es posible que no pueda restaurar máquinas virtuales en su sitio principal a partir de un backup creado en la misma instalación principal antes de la conmutación al respaldo.
+
+* *Causa*
++
+La verificación de copias de Snapshot utiliza GUID de volúmenes. Cambios en los GUID tras la recuperación ante desastres.
+
+* *Acción Correctiva*
++
+Puede deshabilitar la opción Verify Snapshots a través de PowerShell o del asistente Restore:
+
++
+** Desactive la opción "Activar verificación de instantánea" en la página *Opciones de restauración* del asistente Restaurar.
+** Con PowerShell, compruebe que: `DisableVerifySnapshot` se especifica el parámetro.
+
+
+
+
+*Información relacionada*
+
+xref:task-restore-a-virtual-machine-from-a-backup-copy.adoc[Restaurar una máquina virtual a partir de una copia de backup]

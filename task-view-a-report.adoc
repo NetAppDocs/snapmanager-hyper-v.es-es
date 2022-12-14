@@ -1,0 +1,43 @@
+---
+permalink: task-view-a-report.html 
+sidebar: sidebar 
+keywords: view, report, dataset, virtual, machine, resource, manage, snapmanager, hyper-v 
+summary: Es posible ver un informe sobre un conjunto de datos o un recurso de máquina virtual que se gestiona en SnapManager para Hyper-V. 
+---
+= Ver un informe del conjunto de datos
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es posible ver un informe sobre un conjunto de datos o un recurso de máquina virtual que se gestiona en SnapManager para Hyper-V.
+
+.Pasos
+. En el panel de navegación, haga clic en MENU:Reports[Datasets].
+. Seleccione el conjunto de datos o la máquina virtual que contenga el informe que desee ver.
+. En el panel Reports, haga clic en la pestaña Backup o en la pestaña Recovery.
+. Seleccione el informe que desea ver y haga clic en *Ver informe*.
++
+|===
+| Si desea ver un... | Realice lo siguiente... 
+
+
+ a| 
+*informe del conjunto de datos*
+ a| 
+Es posible ver un informe de backup.
+
+
+
+ a| 
+*informe de máquina virtual*
+ a| 
+Puede ver un informe de copia de seguridad o recuperación.
+
+|===
++
+El informe aparece en una ventana independiente.
+
+

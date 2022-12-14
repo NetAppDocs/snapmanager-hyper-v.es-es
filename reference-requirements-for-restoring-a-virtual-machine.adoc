@@ -1,0 +1,71 @@
+---
+permalink: reference-requirements-for-restoring-a-virtual-machine.html 
+sidebar: sidebar 
+keywords: restore, virtual, machine, backup, copy, requirement 
+summary: Para restaurar una máquina virtual de una copia de backup, primero debe determinar la forma en que desea restaurar la copia de backup. 
+---
+= Requisitos para restaurar una máquina virtual
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para restaurar una máquina virtual de una copia de backup, primero debe determinar la forma en que desea restaurar la copia de backup.
+
+
+
+== Nombre de copia de backup de la máquina virtual
+
+Debe decidir la copia de backup que desea restaurar.
+
+Todas las copias de respaldo se muestran por nombre en el panel backups de la ventana Recovery Management.
+
+
+
+== Tipo de copia de backup de máquina virtual
+
+La restauración de una máquina virtual a partir de un backup coherente con las aplicaciones se realiza en coordinación con VSS. El escritor de VSS de Hyper-V elimina la máquina virtual antes de restaurar y registra la máquina virtual en Hyper-V Manager una vez finalizada la operación de restauración.
+
+La restauración de una máquina virtual a partir de un backup coherente con los fallos no requiere VSS. La máquina virtual se apaga antes de la operación de restauración. Cuando se restaura a partir de un backup coherente con los fallos, debe existir la máquina virtual; se produce un error en la restauración de una máquina virtual eliminada de un backup coherente con los fallos.
+
+
+
+== Estado de la copia de backup de la máquina virtual
+
+Debe determinar si la máquina virtual sigue existiendo.
+
+Si la máquina virtual ya no existe, puede seguir restaurarlo si las LUN en las que se creó la máquina virtual siguen existiendo. Las LUN deben tener las mismas letras de unidad y GUID de volumen de Windows que en el momento de la copia de seguridad.
+
+Si elimina una máquina virtual en Windows Server 2008 R2, puede restaurar la máquina virtual desde un backup coherente con las aplicaciones, pero en Windows Server 2012 y Windows Server 2012 R2, puede restaurar una máquina virtual eliminada a partir de un backup coherente con las aplicaciones y los fallos.
+
+Si la máquina virtual se eliminó de todos los conjuntos de datos antes de eliminarla, aún puede restaurarlo seleccionando Resources sin proteger y seleccionando un backup al que pertenecía.
+
+
+
+== Estado de configuración de la copia de backup de la máquina virtual
+
+Es necesario determinar si la configuración de la máquina virtual es la misma que la que tenía en el momento del backup.
+
+Si la configuración actual de la máquina virtual es diferente de en el momento del backup, SnapManager para Hyper-V le notifica que la distribución de la máquina virtual ha cambiado y le pregunta si desea restaurar la configuración y los datos de la máquina virtual tal como existían en el backup.
+
+
+NOTE: Dado que SnapManager para Hyper-V no realiza backups de la configuración de clúster de la máquina virtual, no puede restaurar la configuración de clúster. Si se pierde la configuración del equipo virtual y del clúster, puede restaurar el equipo virtual desde SnapManager para Hyper-V, pero tiene que hacerlo de forma manual altamente disponible.
+
+Si el equipo virtual está configurado de manera diferente a la configuración actual del equipo virtual en la copia de seguridad, es posible que necesite actualizar la configuración del clúster para reflejar cualquier disco duro virtual (VHD) que se haya agregado o eliminado recientemente.
+
+
+
+== Estado de la copia Snapshot
+
+Antes de intentar la operación de restauración, es posible verificar que existen copias de Snapshot de backup en el sistema de almacenamiento.
+
+
+
+== Se reinicia la máquina virtual
+
+Puede elegir iniciar la máquina virtual después de restaurarla.
+
+*Información relacionada*
+
+http://technet.microsoft.com/library/ff182338(v=WS.10).aspx["Microsoft TechNet: Clústeres de conmutación al nodo de respaldo en Windows Server 2008 R2"]

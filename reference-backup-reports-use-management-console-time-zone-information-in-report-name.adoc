@@ -1,0 +1,25 @@
+---
+permalink: reference-backup-reports-use-management-console-time-zone-information-in-report-name.html 
+sidebar: sidebar 
+keywords: backup, report, use, management, console, time, zone, information, report, name 
+summary: Los informes de copia de seguridad utilizan la información de zona horaria de la consola de gestión en el nombre del informe. 
+---
+= Los informes de copia de seguridad utilizan la información de zona horaria de la consola de gestión en el nombre del informe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* *Edición*
++
+Cuando se genera un informe de copia de seguridad utilizando un host cliente que reside en una zona horaria diferente a la del host primario, el nombre del informe utiliza la información de la zona horaria del host cliente y el contenido del informe utiliza la zona horaria del host principal.
+
+* *Causa*
++
+La Marca de hora del nombre del informe de backup aparece con la información de la zona horaria del host del cliente.
+
+* *Acción Correctiva*
++
+No es necesario que realice ninguna acción correctiva.
+
+
